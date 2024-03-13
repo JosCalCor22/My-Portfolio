@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Color Variables */
+$PrimaryColor: #0A1023;
+$SecondaryColor: #005573;
+$TertiaryColor: #00A6B2;
+$QuaternaryColor: #6FFACC;
+$QuinaryColor: #FFF;
+$ShadowColor: rgba(255, 255, 255, 0.25);
+
+/* Font Variables */
+$FontFamily: 'Poppins', sans-serif;
+$ColorFont: #FFFFFF;
+$SecondaryColorFont: #BBBBBB;
+//Font Weight Light
+$FWL: 400;
+//Font Weight Medium
+$FWM: 500;
+//Font Weight Bold
+$FWB: 700;
+//Font Size Large Plus
+$FSLP: 40px;
+//Font Size Title
+$FST: 24px;
+//Font Size Subtitle
+$FSSB: 20px;
+//Font Size Paragraph
+$FSP: 16px;
+//Font Size Small
+$FSS: 14px;
+
+/* Global Variables */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: $FontFamily;
+}
+
+button{
+  font-family: $FontFamily;
+  text-decoration: none;
+  font-weight: $FWM;
+  cursor: pointer;
+  border: none;
+}
+
+/* Mixins */
+@mixin positionCardsCurriculum{
+  flex-direction: column;
+  display: flex;
+  gap: 8px;
+}
+
+@mixin featuresCardsCurriculum{
+  grid-template-columns: 140px 1fr;
+  display: grid;
+  gap: 12px;
+  height: 100%;
+  border-radius: 12px 0 8px 0;
+  background-color: $QuinaryColor;
+}
+
+@mixin buttonPrimary{
+  button{
+    padding: 8px;
+    font-size: $FSS;
+    color: $ColorFont;
+    border-radius: 12px;
+    transition: all .5s ease;
+    border: 1px solid $ColorFont;
+    background-color: transparent;
+  }
+  button:hover, button:active{
+    color: $PrimaryColor;
+    transform: scale(1.1);
+    border: 1px solid $PrimaryColor;
+    background-color: $TertiaryColor;
+    box-shadow: 0 0 5px 0 $ShadowColor;
+  }
+}
+
+@mixin buttonSecondary{
+  button{
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    color: #000;
+    font-size: $FSP;
+    transition: all .5s ease;
+    background-color: $TertiaryColor;
+  }
+  button:hover, button:active{
+    color: $ColorFont;
+    background-color: transparent;
+    border: 1px solid $TertiaryColor;
+    box-shadow: 0 0 5px 0 $ShadowColor;
+  }
+}
+
+@mixin buttonTertiary{
+  button{
+    width: fit-content;
+    height: fit-content;
+    padding: 12px 16px;
+    color: $ColorFont;
+    border-radius: 12px;
+    transition: all .5s ease;
+    border: 1px solid $ColorFont;
+    background-color: transparent;
+  }
+  button:hover, button:active{
+    color: $SecondaryColor;
+    border: 1px solid $SecondaryColor;
+    box-shadow: 0 0 5px 0 $ShadowColor;
+  }
+}
+
+@mixin featuresCardInfoCurriculum{
+  margin: auto 0;
+  height: 100%;
+  color: $ColorFont;
+  border-top-left-radius: 8px;
+  padding: 20px 16px 20px 16px;
+  background-color: $SecondaryColor;
+  p{
+    color: $SecondaryColorFont;
+  }
+}

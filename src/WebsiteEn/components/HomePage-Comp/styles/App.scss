@@ -1,0 +1,133 @@
+.container{
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	&__div1{
+		position: relative;
+		height: 100vh;
+		width: 35%;
+		background-color: $PrimaryColor;
+		box-shadow: 1px 0 10px 1px $PrimaryColor;
+		.container__target{
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			display: flex;
+			height: 360px;
+			width: 280px;
+			top: 25.5%;
+			gap: 15px;
+			right: -70px;
+			border-radius: 12px;
+			box-shadow: 0 0 6px 1px $TertiaryColor;
+			background-color: white;
+			&--photo{
+				height: 125px;
+				width: 125px;
+				margin: 8px 0;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: 50%;
+					background-color: $PrimaryColor;
+				}
+			}
+			&--name{
+				text-align: center;
+				width: 75%;
+				padding-top: 15px;
+				line-height: 30px;
+				border-top: 1px solid $PrimaryColor;
+				h2{
+					max-width: 150px;
+					margin: 0 auto;
+				}
+			}
+			&--social{
+				justify-content: center;
+				display: flex;
+				width: 75%;
+				gap: 12px;
+				padding-top: 15px;
+				border-top: 1px solid $PrimaryColor;
+			}
+		}
+	}
+	&__div2{
+		justify-content: center;
+		flex-direction: column;
+		position: relative;
+		align-items: start;
+		display: flex;
+		width: 65%;
+		height: 100vh;
+		&--targetInfo{
+			display: grid;
+			gap: 14px;
+			width: 75%;
+			margin-left: 120px;
+			.targetInfo__title{
+				h2{
+					font-size: $FSLP;
+					height: 55px;
+				}
+				h3{
+					font-size: $FSSB;
+					font-weight: $FWM;
+				}
+			}
+			.targetInfo__links{
+				display: flex;
+				gap: 12px;
+				.container__btn{
+					padding: 12px;
+					font-size: $FSP;
+					color: #000;
+					border-radius: 12px;
+					transition: all .5s ease;
+					background-color: transparent;
+					border: 1px solid $TertiaryColor;
+				}
+				.container__btn:hover, .container__btn:focus{
+					transform: scale(1.1);
+					border: 1px solid $PrimaryColor;
+					background-color: $TertiaryColor;
+				}
+				.container__btn2{
+					padding: 12px;
+					border-radius: 12px;
+					border: none;
+					font-size: $FSP;
+					color: $ColorFont;
+					transition: all .5s ease;
+					background-color: $PrimaryColor;
+				}
+				.container__btn2:hover, .container__btn2:focus{
+					transform: scale(1.1);
+					border: 1px solid $PrimaryColor;
+					background-color: $TertiaryColor;
+					color: #000;
+				}
+			}
+			.targetInfo__description{
+				span{
+					color: $ColorFont;
+					font-weight: $FWL;
+				}
+				p{
+					font-size: $FSP;
+					font-weight: $FWM;
+				}
+			}
+		}
+		img{
+			position: absolute;
+			height: 100vh;
+			width: 100%;
+			z-index: -1;
+			object-fit: cover;
+		}
+	}
+}

@@ -1,0 +1,174 @@
+@media (max-width: 850px){
+  .container{
+    flex-direction: column;
+    display: flex;
+    height: auto;
+    &__div1{
+      width: 100%;
+      height: 300px;
+      .container__target{
+        width: 290px;
+        top: 28.5%;
+        margin-right: calc(53.5% - 100px);
+      }
+    }
+    &__div2{
+      width: 100%;
+      &--targetInfo{
+        margin: 50px auto 0 auto;
+        .targetInfo__title{
+          text-align: center;
+        }
+        .targetInfo__links{
+          justify-content: center;
+        }
+        .targetInfo__description{
+          p{
+            text-align: justify;
+            max-width: 520px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .container__curriculum{
+    .experience__section, .graphics__section, .moreInfo__section{
+      width: 100%;
+    }
+    .experience__section{
+      &--card1, &--card2, &--card3, &--card4{
+        flex-direction: column;
+        display: flex;
+        gap: 0;
+      }
+      .card__experience{
+        &--info{
+          display: flex;
+          gap: 24px;
+        }
+        &--description{
+          ul{
+            padding: 12px 50px;
+          }
+        }
+      }
+    }
+  }
+  .container__projects{
+    .projects__section, .endInfo__section{
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .container{
+    &__div2--targetInfo{
+      margin-top: 130px;
+    }
+  }
+  .container__curriculum{
+    .title__section{
+      width: 100%;
+      gap: 12px;
+    }
+    .card__experience{
+      &--info{
+        justify-content: center;
+        &-date, &-job, &-company{
+          p{
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+  .container__projects{
+    .title__section{
+      &--items{
+        width: 100%;
+        gap: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px){
+  .container{
+    .container__target{
+      margin-right: calc(55.5% - 100px);
+    }
+    &__div2{
+      height: auto;
+      &--targetInfo{
+        width: 90%;
+        margin: 180px 25px 40px 25px;
+        .targetInfo__title{
+          width: 310px;
+          text-align: unset;
+        }
+        .targetInfo__links{
+          justify-content: unset;
+        }
+        .targetInfo__description{
+          p{
+            text-align: unset;
+          }
+        }
+      }
+
+    }
+    &__curriculum{
+      .title__section{
+        &--items{
+          display: flex;
+          width: 100%; 
+          gap: 12px;
+        }
+      }
+      .experience__section{
+        .card__experience{
+          &--description{
+            ul{
+              padding: 12px 28px;
+            }
+          }
+        }
+      }
+      .graphics__section{
+        .container__graph{
+          .graph__main{
+            display: none !important;
+          }
+          .graph__responsive{
+            display: block !important;
+          }
+        }
+      }
+      .moreInfo__section{
+        .container__cv{
+          &--buttons-btn{
+            display: none;
+          }
+          &--buttons-btnResponsive{
+            display: flex;
+            gap: 12px;
+            @include buttonTertiary;
+          }
+        }
+      }
+    }
+    &__projects{
+      .projects__section{
+        &--card{
+          padding: 16px;
+        }
+      }
+    }
+  }
+}

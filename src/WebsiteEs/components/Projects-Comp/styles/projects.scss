@@ -1,0 +1,173 @@
+.container__projects{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  background-color: $PrimaryColor;
+  .title__section{
+    &--items{
+      justify-content: space-evenly;
+      align-items: center;
+      display: flex;
+      width: 500px;
+      margin-top: 40px;
+      .items__btn{
+        place-items: center;
+        display: grid;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        border-radius: 50%;
+        transition: all .5s ease;
+        border: 1px solid $ColorFont;
+        background-color: transparent;
+      }
+      .items__btn:hover, .items__btn:focus{
+        border: 1px solid $PrimaryColor;
+        background-color: $TertiaryColor;
+        box-shadow: 0 0 5px 0 $ShadowColor;
+      }
+      h2{
+        color: $ColorFont;
+        font-size: $FSLP;
+      }
+      .nextPage__btn{
+        padding: 8px;
+        font-size: $FSS;
+        color: $ColorFont;
+        border-radius: 12px;
+        transition: all .5s ease;
+        border: 1px solid $ColorFont;
+        background-color: transparent;
+      }
+      .nextPage__btn:hover, .nextPage__btn:focus{
+        color: $PrimaryColor;
+        transform: scale(1.1);
+        border: 1px solid $PrimaryColor;
+        background-color: $TertiaryColor;
+        box-shadow: 0 0 5px 0 $ShadowColor;
+      }
+    }
+  }
+  .projects__section{
+    width: 800px;
+    display: grid;
+    gap: 50px;
+    &--card{
+      width: 100%;
+      padding: 25px 50px;
+      border-radius: 20px;
+      border: 1px solid $SecondaryColor;
+      .card__title{
+        color: $ColorFont;
+        margin-bottom: 10px;
+      }
+      .card__img{
+        img{
+          width: 100%;
+          border-radius: 20px;
+        }
+      }
+      .card__info{
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        &--tech{
+          flex-direction: column;
+          display: flex;
+          &-title{
+            color: $ColorFont;
+            margin-bottom: 8px;
+            font-size: $FSSB;
+          }
+          &-icons{
+            display: flex;
+            gap: 12px;
+            .icon{
+              width: 50px;
+              height: 50px;
+              stroke-width: 8;
+              cursor: pointer;
+              fill: none;
+              stroke: $TertiaryColor;
+              transition: all .5s ease;
+            }
+            .icon-ts{
+              width: 45px;
+              height: 50px;
+              stroke: none;
+              fill: $TertiaryColor;
+            }
+            .icon-sass, .icon-tailwind{
+              stroke: none;
+              fill: $TertiaryColor;
+            }
+            .icon-html:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #ff5c29;
+            }
+            .icon-css:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #0870c2;
+            }
+            .icon-js:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #f7e025;
+            }
+            .icon-sass:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #cc6699;
+            }
+            .icon-react:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #61dafb;
+            }
+            .icon-ts:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #087ece;
+            }
+            .icon-tailwind:hover{
+              scale: 1.1;
+              stroke: none;
+              fill: #1dc6bc;
+            }
+          }
+        }
+        &--description{
+          h3{
+            color: $ColorFont;
+            margin-bottom: 8px;
+            font-size: $FSSB;
+          }
+          p{
+            color: $SecondaryColorFont;
+          }
+        }
+        &--btn{
+          @include buttonPrimary;
+        }
+      }
+    }
+  }
+  .endInfo__section{
+    width: 800px;
+    margin: 25px 0 50px 0;
+    p{
+      color: $ColorFont;
+      margin-bottom: 12px;
+    }
+    &--btn{
+      display: flex;
+      gap: 20px;
+      @include buttonSecondary;
+    }
+  }
+}

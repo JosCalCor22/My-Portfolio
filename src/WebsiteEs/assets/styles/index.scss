@@ -1,0 +1,10 @@
+/* Global Styles */
+@import './global/variables/variables.scss';
+
+/* Styles Components */
+@import '../../components/HomePage-Comp/styles/App.scss';
+@import '../../components/Projects-Comp/styles/projects.scss';
+@import '../../components/Curriculum-Comp/styles/curriculum.scss';
+
+/* Responsive */
+@import './global/responsive/responsive.scss';

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 function Navigation(){
   return(
     <div className="targetInfo__links">
-      <Link to='/curriculum'>
+      <Link to='/es/curriculum'>
         <button className='container__btn'> Curriculum</button>
       </Link>
-      <Link to='/proyectos'>
+      <Link to='/es/proyectos'>
         <button className='container__btn2'>Proyectos</button>
       </Link>
     </div>

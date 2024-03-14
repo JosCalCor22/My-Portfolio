@@ -17,7 +17,7 @@ function MoreInfo (){
         <div className="container__cv--buttons-btn">
           <button onClick={() => {setOpenViewerCVEn(!openViewerCVEn), setOpenViewerCVEs(false)}}>Ver mi CV (English)</button>
           <button onClick={() => {setOpenViewerCVEs(!openViewerCVEs), setOpenViewerCVEn(false)}}>Ver mi CV (Español)</button>
-          <Link to={'/proyectos'}>
+          <Link to={'/en/proyects'}>
             <button>Ver mis proyectos</button>
           </Link>
         </div>

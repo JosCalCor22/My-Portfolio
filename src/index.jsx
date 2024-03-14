@@ -4,7 +4,5 @@ import ReactDOM from 'react-dom/client'
 import { Index } from './welcome'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <Index />
-  </>
+  <Index />
 )

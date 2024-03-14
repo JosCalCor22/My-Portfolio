@@ -10,18 +10,18 @@ import ExperienceSection from './components/Experience.jsx';
 /* SVG */
 import ArrowSVG from '../../assets/svg/Arrow-Icon.svg';
 
-function Curriculum(){
+function CurriculumEn(){
   return(
     <section className="container__curriculum">
       <section className="title__section">
         <div className="title__section--items">
-          <Link to='/'>
+          <Link to='/en/home'>
             <button className="items__btn">
               <img src={ArrowSVG} alt="Arrow Icon" />
             </button>
           </Link>
           <h2>Curriculum</h2>
-          <Link to='/proyectos'>
+          <Link to='/en/proyects'>
             <button className='nextPage__btn'>Proyectos</button>
           </Link>
         </div>
@@ -39,4 +39,4 @@ function Curriculum(){
   )
 }
 
-export { Curriculum }
+export { CurriculumEn }

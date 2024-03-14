@@ -1,24 +1,45 @@
-import { useState } from 'react'
-import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-/* Components */
-import { WebsiteEs } from './WebsiteEs/main'
+/* Components English*/
 import { WebsiteEn } from './WebsiteEn/main'
+import { ProyectsEn } from './WebsiteEn/components/Projects-Comp/projects'
+import { CurriculumEn } from './WebsiteEn/components/Curriculum-Comp/curriculum'
 
-function Index(){
-  const [language, setLanguage] = useState(null);
+/* Components Spanish */
+import { WebsiteEs } from './WebsiteEs/main'
+import { ProyectsEs } from './WebsiteEs/components/Projects-Comp/projects'
+import { CurriculumEs } from './WebsiteEs/components/Curriculum-Comp/curriculum'
 
+function Index() {
   return(
-    <section className="container__welcome">
-      <div className="container__welcome--title">
-        <h2>Welcome to my portfolio!!</h2>
-        <p>In what language would you like to see my portfolio?</p>
-      </div>
-      <div className="container__welcome--btns">
-        <button onClick={() => {setLanguage(false), console.log(language)}}>English</button>
-        <button onClick={() => {setLanguage(true), console.log(language)}}>Español</button>
-      </div>
-    </section>
+    <Router>
+      <section className="container__welcome">
+        <div className="container__welcome--title">
+          <h2>Welcome to my portfolio!!</h2>
+          <p>In what language would you like to see my portfolio?</p>
+        </div>
+        <div className="container__welcome--btns">
+          <Link to={'/en/home'} target='_blank' rel='noreferrer'>
+            <button>English</button>
+          </Link>
+          <Link to={'/es/home'} target='_blank' rel='noreferrer'>
+            <button>Español</button>
+          </Link>
+        </div>
+      </section>
+
+      <Routes>
+        {/* Rutas padres */}
+        <Route path='/es/home' Component={WebsiteEs} />
+        <Route path='/en/home' Component={WebsiteEn} />
+        {/* Rutas para componentes CV */}
+        <Route path='/en/curriculum' Component={CurriculumEn} />
+        <Route path='/es/curriculum' Component={CurriculumEs} />
+        {/* Rutas para componentes Proyectos */}
+        <Route path='/en/proyects' Component={ProyectsEn} />
+        <Route path='/es/proyectos' Component={ProyectsEs} />
+      </Routes>
+    </Router>
   )
 }
 

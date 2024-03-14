@@ -7,19 +7,19 @@ import { ProjectsCards } from './components/projectsCards';
 /* SVG */
 import ArrowSVG from '../../assets/svg/Arrow-Icon.svg';
 
-function Proyects(){
+function ProyectsEs(){
   return(
     <>
       <section className="container__projects">
         <section className="title__section">
         <div className="title__section--items">
-          <Link to='/'>
+          <Link to='/es/home'>
             <button className="items__btn">
               <img src={ArrowSVG} alt="Arrow Icon" />
             </button>
           </Link>
           <h2>Proyectos</h2>
-          <Link to='/curriculum'>
+          <Link to='/es/curriculum'>
             <button className='nextPage__btn'>Curriculum</button>
           </Link>
         </div>
@@ -33,7 +33,7 @@ function Proyects(){
             <Link to={'https://github.com/JosCalCor22'} target='_blank'>
               <button>Ir a mi repo</button>
             </Link>
-            <Link to={'/curriculum'}>
+            <Link to={'/es/curriculum'}>
               <button>Ver mi curriculum</button>
             </Link>
           </div>
@@ -43,4 +43,4 @@ function Proyects(){
   )
 }
 
-export { Proyects }
+export { ProyectsEs }

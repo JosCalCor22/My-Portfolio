@@ -17,7 +17,7 @@ function MoreInfo (){
         <div className="container__cv--buttons-btn">
           <button onClick={() => {setOpenViewerCVEn(!openViewerCVEn), setOpenViewerCVEs(false)}}>Ver mi CV (English)</button>
           <button onClick={() => {setOpenViewerCVEs(!openViewerCVEs), setOpenViewerCVEn(false)}}>Ver mi CV (Español)</button>
-          <Link to={'/proyectos'}>
+          <Link to={'/es/proyectos'}>
             <button>Ver mis proyectos</button>
           </Link>
         </div>
@@ -28,7 +28,7 @@ function MoreInfo (){
           <Link to={'https://drive.google.com/file/d/1DCTfixCrsYdprXwX66yTa_F2AZFa7WRG/view'} target='_blank'>
             <button>Ver mi CV (Español)</button>
           </Link>
-          <Link to={'/proyectos'}>
+          <Link to={'/es/proyectos'}>
             <button>Ver mis proyectos</button>
           </Link>
         </div>

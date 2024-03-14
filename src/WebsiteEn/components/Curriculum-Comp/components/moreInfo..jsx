@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import CVEspañol from '../pdf/H.V_JOSETH_CALDERON(2024).pdf'
+import CVIngles from '../pdf/CV_Joseth_Calderon(2024).pdf'
+
 function MoreInfo (){
   const [openViewerCVEn, setOpenViewerCVEn] = useState(false);
   const [openViewerCVEs, setOpenViewerCVEs] = useState(false);
@@ -36,7 +39,7 @@ function MoreInfo (){
             openViewerCVEn && (
               <section className='container__cv--viewer'>
                 <div className="container__cv--viewer-view">
-                  <embed src="src/components/Curriculum-Comp/pdf/CV_Joseth_Calderon(2024).pdf" type="application/pdf" />
+                  <embed src={CVIngles} type="application/pdf" />
                 </div>
               </section>
             )
@@ -45,7 +48,7 @@ function MoreInfo (){
             openViewerCVEs && (
               <section className='container__cv--viewer'>
                 <div className="container__cv--viewer-view">
-                  <embed src="src/components/Curriculum-Comp/pdf/H.V_JOSETH_CALDERON(2024).pdf" type="application/pdf" />
+                  <embed src={CVEspañol} type="application/pdf" />
                 </div>
               </section>
             )

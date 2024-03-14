@@ -17,12 +17,12 @@ function App() {
       <div className='container__div2'>
         <article className='container__div2--targetInfo'>
           <div className='targetInfo__title'>
-            <h2>Hola mundo🌐</h2>
-            <h3>Bienvenidos a mi portafolio profesional</h3>
+            <h2>Hello world🌐</h2>
+            <h3>Welcome to my professional portfolio</h3>
           </div>
             <Navigation />           
           <div className='targetInfo__description'>
-            <p>Apasionado desarrollador Frontend con <span>dos años de experiencia,</span> he trazado mi propio camino de <span>aprendizaje autodidacta.</span> Mi versatilidad se refleja en la participación exitosa en diversos proyectos, tanto colaborativos como individuales. Destaco por mi capacidad para enfrentar <span>desafíos de manera creativa y eficiente,</span> contribuyendo al desarrollo de soluciones innovadoras y funcionales. Mi enfoque autodidacta garantiza una actualización constante en las últimas tecnologías. <span>Emocionado por seguir creciendo y aportando al mundo del desarrollo frontend.</span></p>
+            <p>Passionate Frontend developer with <span>two years of experience,</span> I have traced my own <span>self-taught learning</span> path. My versatility is reflected in the successful participation in various projects, both collaborative and individual. I stand out for my ability to face <span>challenges creatively and efficiently,</span> contributing to the development of innovative and functional solutions. My self-taught approach guarantees a constant update on the latest technologies. <span>Excited to continue growing and contributing to the world of frontend development.</span></p>
           </div>
         </article>
         <img src={BackgroundSVG} alt='Background SVG' className='background' />

@@ -20,14 +20,23 @@
     padding: 50px;
     width: 500px;
     color: #000;
-  }
-  .container__welcome--btns{
-    justify-content: center;
-    display: flex;
-    gap: 20px;
-    @include buttonPrimary;
-    button{
-      width: 150px;
+      &--title{
+        font-weight: $FWB;
+        font-size: 18px;
+        p:last-child{
+          border-top: 1px solid $PrimaryColor;
+          padding-top: 5px;
+          margin-top: 10px;
+        }
+      }
+      &--btns{
+      justify-content: center;
+      display: flex;
+      gap: 25px;
+      @include buttonPrimary;
+      button{
+        width: 150px;
+      }
     }
   }
 }

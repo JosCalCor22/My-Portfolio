@@ -27,7 +27,7 @@ ChartJS.register(
 
 export default function Graphs() {
   /* let average = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].reverse(); */
-  let skills = ['JavaScript', 'ReactJS', 'HTML', 'CSS', 'Sass', 'Tailwind', 'GitBash', 'Ingles', 'Alemán'];
+  let skills = ['JavaScript', 'ReactJS', 'HTML', 'CSS', 'Sass', 'Tailwind', 'GitBash', 'English', 'German'];
 
   let xValuesAxis = [40, 85, 80, 80, 90, 100, 100, 85, 90].reverse();
   
@@ -108,10 +108,10 @@ export default function Graphs() {
   return(
     <section className="container__graph">
       <div className="container__graph--title">
-        <h2>Habilidades</h2>
+        <h2>Skills</h2>
       </div>
       <div className="container__graph--text">
-        <p>Estas son las habilidades que manejo actualmente.</p>
+        <p>These are my skills I currently use: </p>
       </div>
       <Bar data={data} options={options} className='graph__main' />
       <Bar data={data} options={optionsResponsive} className='graph__responsive' />

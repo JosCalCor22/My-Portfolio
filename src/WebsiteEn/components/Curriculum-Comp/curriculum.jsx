@@ -22,7 +22,7 @@ function CurriculumEn(){
           </Link>
           <h2>Curriculum</h2>
           <Link to='/en/proyects'>
-            <button className='nextPage__btn'>Proyectos</button>
+            <button className='nextPage__btn'>Projects</button>
           </Link>
         </div>
       </section>

@@ -2,95 +2,95 @@ export default function Experience(){
   return (
     <>
       <div className="experience__section--title">
-        <h2>Experiencia</h2>
+        <h2>Experience</h2>
       </div>
       <div className="experience__section--card1 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>01/10/2023 - Actual</p>
+            <h3>Date:</h3>
+            <p>01/10/2023 - Present</p>
           </div>
           <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
+            <h3>Job:</h3>
             <p>CTO</p>
           </div>
           <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
+            <h3>Company:</h3>
             <p>BienestarTu</p>
           </div>
         </div>
         <article className="card__experience--description">
           <ul>
-            <li>Durante mi tiempo en BienestarTu, contribuí significativamente al desarrollo y mantenimiento de la página web mediante herramientas noCode y programación frontend con React, Tailwind, y HTML.</li>
-            <li>Participé activamente en decisiones administrativas de la startup y colaboré en procesos de contratación, consolidando así mi papel integral en el crecimiento y éxito de la empresa.</li>
+            <li>During my time at BienestarTu, I contributed significantly to the development and maintenance of the website using noCode tools and frontend programming with React, Tailwind, and HTML.</li>
+            <li>I actively participated in administrative decisions of the startup and collaborated in hiring processes, thus consolidating my integral role in the growth and success of the company.</li>
           </ul>
         </article>
       </div>
       <div className="experience__section--card2 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
+            <h3>Date:</h3>
             <p>17/02/2024 - 18/02/2024</p>
           </div>
           <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>Desarrollador Frontend</p>
+            <h3>Job:</h3>
+            <p>Frontend Developer</p>
           </div>
           <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
+            <h3>Company:</h3>
             <p>Hackathon Solana</p>
           </div>
         </div>
         <article className="card__experience--description">
           <ul>
-            <li>En la Hackathon de Solana, lideré como frontend developer en 24 horas. Enfoque en React.js y Sass para una interfaz atractiva. Aunque no ganamos, QuantumSapiens captó la atención, marcando su evolución. Este desafío impulsó mis habilidades y marcó una etapa emocionante en mi carrera.</li>
-            <li>QuantumSapiens atrajo a dos jueces, allanando el camino para su reconocimiento profesional. Este desafío impulsó mis habilidades técnicas y dejó una impresión duradera.</li>
+            <li>At the Solana Hackathon, I led as a frontend developer in 24 hours. Focus on React.js and Sass for an attractive interface. Although we didn't win, QuantumSapiens captured attention, marking its evolution. This challenge boosted my skills and marked an exciting stage in my career.</li>
+            <li>QuantumSapiens attracted two judges, paving the way for its professional recognition. This challenge boosted my technical skills and left a lasting impression.</li>
           </ul>
         </article>
       </div>
       <div className="experience__section--card3 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
+            <h3>Date:</h3>
             <p>08/11/2023 - 10/12/2023</p>
           </div>
           <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
+            <h3>Job:</h3>
             <p>Desarrollador Frontend</p>
           </div>
           <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
+            <h3>Company:</h3>
             <p>Hackathon Chainlink</p>
           </div>
         </div>
         <article className="card__experience--description">
           <ul>
-            <li>En mi participación en la hackathon de Chainlink, expandí mis conocimientos en desarrollo blockchain, destacando mis habilidades en Solidity.</li>
-            <li>Colaboré en la construcción del proyecto con un equipo de 5 personas, utilizando tecnologías como React, CSS, HTML y Solidity. Aunque no obtuvimos un premio principal, recibimos reconocimientos de sponsors como Scroll y Tableland.</li>
-            <li>Contribuí al uso de librerías como Hardhat para integrar contratos inteligentes con la interfaz de React, demostrando versatilidad tanto en el frontend como en el backend.</li>
+            <li>In my participation in the Chainlink hackathon, I expanded my knowledge in blockchain development, highlighting my skills in Solidity.</li>
+            <li>I collaborated in the construction of the project with a team of 5 people, using technologies such as React, CSS, HTML and Solidity. Although we did not win a main prize, we received recognition from sponsors such as Scroll and Tableland.</li>
+            <li>I contributed to the use of libraries such as Hardhat to integrate smart contracts with the React interface, demonstrating versatility in both the frontend and backend.</li>
           </ul>
         </article>
       </div>
       <div className="experience__section--card4 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
+            <h3>Date:</h3>
             <p>23/06/2022 - Actual</p>
           </div>
           <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
+            <h3>Job:</h3>
             <p>Desarrollador Frontend</p>
           </div>
           <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>Proyectos personales</p>
+            <h3>Company:</h3>
+            <p>Personal Proyects</p>
           </div>
         </div>
         <article className="card__experience--description">
           <ul>
-            <li>He destacado por mi capacidad para trabajar tanto de manera individual como en equipo en diversos proyectos. Aquí, he aplicado y perfeccionado mis habilidades en desarrollo frontend, abordando proyectos de diferentes escalas con un enfoque constante en la mejora continua.</li>
-            <li>A través de mi repositorio en GitHub, he fortalecido no solo mis habilidades de programación, sino también mi destreza en el uso de control de versiones como Git Bash.</li>
-            <li>La experiencia de trabajar con la terminal me ha permitido comprender y dominar eficientemente diversas operaciones, como la creación, edición y eliminación de código.</li>
+            <li>I have stood out for my ability to work both individually and as a team on various projects. Here, I have applied and honed my skills in frontend development, tackling projects of different scales with a constant focus on continuous improvement.</li>
+            <li>Through my GitHub repository, I have strengthened not only my programming skills, but also my proficiency in using version control like Git Bash.</li>
+            <li>The experience of working with the terminal has allowed me to efficiently understand and master various operations, such as creating, editing and deleting code.</li>
           </ul>
         </article>
       </div>

@@ -10,7 +10,7 @@ function Navigation(){
         <button className='container__btn'> Curriculum</button>
       </Link>
       <Link to='/en/proyects'>
-        <button className='container__btn2'>Proyects</button>
+        <button className='container__btn2'>Projects</button>
       </Link>
       <Link to='/'>
         <button className='container__btn2'>Change language</button>

@@ -8,17 +8,17 @@ function MoreInfo (){
   return(
     <section className="container__cv">
       <div className="container__cv--title">
-        <h2>Mas información</h2>
+        <h2>More Information</h2>
       </div>
       <div className="container__cv--description">
-        <p>En mi CV obtendras mas información de valor sobre mi y videa academica. Tambien puedes ver mis proyectos y evidenciar las diferentes habilidades que he aplicado como desarrollador a lo largo de mi carrera.</p>
+        <p>In my CV you will get more valuable information about me and academic video. You can also see my projects and demonstrate the different skills that I have applied as a developer throughout my career.</p>
       </div>
       <div className="container__cv--buttons">
         <div className="container__cv--buttons-btn">
-          <button onClick={() => {setOpenViewerCVEn(!openViewerCVEn), setOpenViewerCVEs(false)}}>Ver mi CV (English)</button>
-          <button onClick={() => {setOpenViewerCVEs(!openViewerCVEs), setOpenViewerCVEn(false)}}>Ver mi CV (Español)</button>
+          <button onClick={() => {setOpenViewerCVEn(!openViewerCVEn), setOpenViewerCVEs(false)}}>See my CV (English)</button>
+          <button onClick={() => {setOpenViewerCVEs(!openViewerCVEs), setOpenViewerCVEn(false)}}>See my CV (Español)</button>
           <Link to={'/en/proyects'}>
-            <button>Ver mis proyectos</button>
+            <button>See my projects</button>
           </Link>
         </div>
         <div className="container__cv--buttons-btnResponsive">

@@ -30,7 +30,7 @@ function ProjectsCards() {
         <div className="card__info">
           <div className="card__info--tech">
             <div className="card__info--tech-title">
-              <h3>Tecnologías usadas:</h3>
+              <h3>Technologies used:</h3>
             </div>
             <div className="card__info--tech-icons">
               <FaHtml5 className='icon icon-html' />
@@ -41,12 +41,12 @@ function ProjectsCards() {
             </div>
           </div>
           <div className="card__info--description">
-            <h3>Descripción:</h3>
-            <p>Juego cooperativo donde la aplicación contiene bastantes funcionalidades complejas y completas para que el usuario tenga una muy buena interactividad.</p>
+            <h3>Description:</h3>
+            <p>Cooperative game where the application contains many complex and complete functionalities so that the user has very good interactivity.</p>
           </div>
           <div className="card__info--btn">
             <Link to='https://tic-tac-toe-henna-omega.vercel.app' target='_blank'>
-              <button>Ver proyecto</button>
+              <button>See project</button>
             </Link>
           </div>
         </div>
@@ -61,7 +61,7 @@ function ProjectsCards() {
         <div className="card__info">
           <div className="card__info--tech">
             <div className="card__info--tech-title">
-              <h3>Tecnologías usadas:</h3>
+              <h3>Technologies used:</h3>
             </div>
             <div className="card__info--tech-icons">
               <FaHtml5 className='icon icon-html' />
@@ -70,12 +70,12 @@ function ProjectsCards() {
             </div>
           </div>
           <div className="card__info--description">
-            <h3>Descripción:</h3>
-            <p>Traductor Alura tal como su nombre lo menciona es una aplicación donde puedes realizar traducciones en cuatro idiomas y aparte de eso puede encriptar y desencriptar mensajes de manera rápida y sencilla en un mismo sitio.</p>
+            <h3>Description:</h3>
+            <p>Alura Translator, as its name suggests, is an application where you can perform translations in four languages and apart from that, it can encrypt and decrypt messages quickly and easily in one place.</p>
           </div>
           <div className="card__info--btn">
             <Link to='https://joscalcor22.github.io/Traductor-Challange-Alura/' target='_blank'>
-              <button>Ver proyecto</button>
+              <button>See project</button>
             </Link>
           </div>
         </div>
@@ -90,7 +90,7 @@ function ProjectsCards() {
         <div className="card__info">
           <div className="card__info--tech">
             <div className="card__info--tech-title">
-              <h3>Tecnologías usadas:</h3>
+              <h3>Technologies used:</h3>
             </div>
             <div className="card__info--tech-icons">
               <FaHtml5 className='icon icon-html' />
@@ -101,12 +101,12 @@ function ProjectsCards() {
             </div>
           </div>
           <div className="card__info--description">
-            <h3>Descripción:</h3>
-            <p>Traductor Alura tal como su nombre lo menciona es una aplicación donde puedes realizar traducciones en cuatro idiomas y aparte de eso puede encriptar y desencriptar mensajes de manera rápida y sencilla en un mismo sitio.</p>
+            <h3>Description:</h3>
+            <p>Alura Translator, as its name suggests, is an application where you can perform translations in four languages and apart from that, it can encrypt and decrypt messages quickly and easily in one place.</p>
           </div>
           <div className="card__info--btn">
             <Link to='https://joscalcor22.github.io/Traductor-Challange-Alura/' target='_blank'>
-              <button>Ver proyecto</button>
+              <button>See project</button>
             </Link>
           </div>
         </div>
@@ -121,7 +121,7 @@ function ProjectsCards() {
         <div className="card__info">
           <div className="card__info--tech">
             <div className="card__info--tech-title">
-              <h3>Tecnologías usadas:</h3>
+              <h3>Technologies used:</h3>
             </div>
             <div className="card__info--tech-icons">
               <FaHtml5 className='icon icon-html' />
@@ -130,12 +130,12 @@ function ProjectsCards() {
             </div>
           </div>
           <div className="card__info--description">
-            <h3>Descripción:</h3>
-            <p>LoopStudio es un website en donde se implemento JS como lenguaje de programación para los diferentes eventos que se pueden encontrar en el sitio web y también el uso de HTML y CSS como herramientas de diseño y estructuración. La novedad principal de este proyecto es el uso de SASS como preprocesador al momento de realizar el diseño.</p>
+            <h3>Description:</h3>
+            <p>LoopStudio is a website where JS was implemented as a programming language for the different events that can be found on the website and also the use of HTML and CSS as design and structuring tools. The main novelty of this project is the use of SASS as a preprocessor when carrying out the design.</p>
           </div>
           <div className="card__info--btn">
             <Link to='https://joscalcor22.github.io/LoopStudio/' target='_blank'>
-              <button>Ver proyecto</button>
+              <button>See project</button>
             </Link>
           </div>
         </div>

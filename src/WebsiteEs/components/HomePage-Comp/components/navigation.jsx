@@ -12,6 +12,9 @@ function Navigation(){
       <Link to='/es/proyectos'>
         <button className='container__btn2'>Proyectos</button>
       </Link>
+      <Link to='/'>
+        <button className='container__btn2'>Cambiar idioma</button>
+      </Link>
     </div>
   )
 }

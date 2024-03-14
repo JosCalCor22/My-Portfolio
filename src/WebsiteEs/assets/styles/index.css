@@ -16,6 +16,7 @@ html {
 button {
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+  height: 100%;
   font-weight: 500;
   cursor: pointer;
   border: none;
@@ -23,6 +24,56 @@ button {
 
 /* Mixins */
 /* Styles Components */
+.container2 {
+  place-items: center;
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+}
+.container2 img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100vh;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+}
+.container2 .container__welcome {
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 50px;
+  width: 500px;
+  color: #000;
+}
+.container2 .container__welcome--btns {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+.container2 .container__welcome--btns button {
+  padding: 8px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+}
+.container2 .container__welcome--btns button:hover, .container2 .container__welcome--btns button:active {
+  color: #0A1023;
+  transform: scale(1.1);
+  border: 1px solid #0A1023;
+  background-color: #00A6B2;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.25);
+}
+.container2 .container__welcome--btns button {
+  width: 150px;
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -642,6 +693,10 @@ button {
   }
 }
 @media (max-width: 520px) {
+  .container__welcome {
+    width: 100%;
+    padding: 50px 0;
+  }
   .container .container__target {
     margin-right: calc(55.5% - 100px);
   }

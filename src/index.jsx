@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
       <Routes>
         {/* Ruta pricipal */}
-        <Route path='/' Component={Index} />
+        <Route index Component={Index} />
         {/* Rutas padres */}
         <Route path='/es/home' Component={WebsiteEs} />
         <Route path='/en/home' Component={WebsiteEn} />

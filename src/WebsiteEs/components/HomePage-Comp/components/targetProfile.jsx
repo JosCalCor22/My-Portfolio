@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import svgLinkedIn from "../../../assets/svg/LinkedIn-Icon.svg";
 import svgWhatsapp from "../../../assets/svg/Whatsapp-Icon.svg";
 import svgGithub from "../../../assets/svg/Github-Icon.svg";
+import profilePhoto from "../img/imgProfilePhoto.png"
 
 function TargetProfile() {
   const svgURL = {
@@ -17,7 +18,7 @@ function TargetProfile() {
   return (
     <div className="container__target">
       <div className="container__target--photo">
-        <img src="src/components/HomePage-Comp/img/imgProfilePhoto.png" alt="" />
+        <img src={profilePhoto} alt="Profile Photo" />
       </div>
       <div className="container__target--name">
         <h2>Joseth Calderón</h2>

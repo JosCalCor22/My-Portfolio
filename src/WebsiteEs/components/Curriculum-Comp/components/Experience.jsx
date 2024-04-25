@@ -30,6 +30,29 @@ export default function Experience(){
         <div className="card__experience--info">
           <div className="card__experience--info-date">
             <h3>Fecha:</h3>
+            <p>18/02/2024 - 23/04/2024</p>
+          </div>
+          <div className="card__experience--info-job">
+            <h3>Puesto:</h3>
+            <p>Desarrollador Frontend</p>
+          </div>
+          <div className="card__experience--info-company">
+            <h3>Empresa:</h3>
+            <p>Hackathon Filecoin</p>
+          </div>
+        </div>
+        <article className="card__experience--description">
+          <ul>
+            <li>Diseñé y desarrollé la interfaz de usuario del proyecto SciFile utilizando React.js, TypeScript, Sass y CSS. Creamos una interfaz intuitiva y fácil de usar para la gestión de articulos en la red Filecoin y por ultimo pero no menos importante, optimizamos el rendimiento del frontend para garantizar una experiencia fluida y receptiva.</li>
+            <li>Uno de los objetivos mas inportantes era integrar mi trabajo con los componentes desarrollados por otros miembros del equipo para crear un producto final cohesivo. Mis habilidades y conocimientos técnicos ayudaron el éxito general del proyecto pues creamos un aplicación fullstack junto con una conexión Blockchain.</li>
+            <li>Como grupo obtuvimos el tercer puesto en la Hackathon Filecoin Data Economy. Me siento orgulloso del avance personal y profesional que demostré durante la hackathon, además de mejorar y fortalecer mis habilidades y mis conocimientos como frontend developer.</li>
+          </ul>
+        </article>
+      </div>
+      <div className="experience__section--card3 card__experience">
+        <div className="card__experience--info">
+          <div className="card__experience--info-date">
+            <h3>Fecha:</h3>
             <p>17/02/2024 - 18/02/2024</p>
           </div>
           <div className="card__experience--info-job">
@@ -48,7 +71,7 @@ export default function Experience(){
           </ul>
         </article>
       </div>
-      <div className="experience__section--card3 card__experience">
+      <div className="experience__section--card4 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
             <h3>Fecha:</h3>
@@ -71,7 +94,7 @@ export default function Experience(){
           </ul>
         </article>
       </div>
-      <div className="experience__section--card4 card__experience">
+      <div className="experience__section--card5 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
             <h3>Fecha:</h3>

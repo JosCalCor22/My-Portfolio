@@ -12,6 +12,7 @@ import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 
 /* img */
+import project0 from '../img/imgProject0.png';
 import project1 from '../img/imgProject1.png';
 import project2 from '../img/imgProject2.png';
 import project3 from '../img/imgProject3.png';
@@ -20,6 +21,37 @@ import project4 from '../img/imgProject4.png'
 function ProjectsCards() {
   return(
     <>
+      <section className="projects__section--card">
+        <div className="card__title">
+          <h2>SciFile | Hackathon Solana</h2>
+        </div>
+        <div className="card__img">
+          <img src={project0} alt='Imagen proyecto 1' />
+        </div>
+        <div className="card__info">
+          <div className="card__info--tech">
+            <div className="card__info--tech-title">
+              <h3>Tecnologías usadas:</h3>
+            </div>
+            <div className="card__info--tech-icons">
+              <SiTypescript className='icon icon-ts' />
+              <IoLogoJavascript className='icon icon-js' />
+              <FaCss3Alt className='icon icon-css' />
+              <FaSass className='icon icon-sass' />
+              <FaReact className='icon icon-react' />
+            </div>
+          </div>
+          <div className="card__info--description">
+            <h3>Descripción:</h3>
+            <p>Este fue el proyecto de la hackathon, su proposito es permitir a los usuarios que usen nuestra website subir articulos de manera descentralizada. De esta manera todos los articulos no tendran algún tipo de limitación o censura. Aunque el proyecto no esta completo, cuenta con una estructura frontend y backend, además de tener interacción con la blockchain de Filecoin. Cabe recalcar que este proyecto fue un MVP.</p>
+          </div>
+          <div className="card__info--btn">
+            <Link to='https://quick-raincoat-crooked.on-fleek.app' target='_blank'>
+              <button>Ver proyecto</button>
+            </Link>
+          </div>
+        </div>
+      </section>
       <section className="projects__section--card">
         <div className="card__title">
           <h2>Tricky | Tic-Tac-Toe</h2>

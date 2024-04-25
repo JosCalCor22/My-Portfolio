@@ -25,10 +25,10 @@ function MoreInfo (){
           </Link>
         </div>
         <div className="container__cv--buttons-btnResponsive">
-          <Link to={'https://drive.google.com/file/d/1N2Nepyoz6YTceb2oKBBraZL-uEITgMWo/view'} target='_blank'>
+          <Link to={'https://docs.google.com/document/d/1nTsyFJX-V3NJaPZbD764oMXgAtLMBiooMLSRkFeUy1g/edit?usp=sharing'} target='_blank'>
             <button>Ver mi CV (English)</button>
           </Link>
-          <Link to={'https://drive.google.com/file/d/1DCTfixCrsYdprXwX66yTa_F2AZFa7WRG/view'} target='_blank'>
+          <Link to={'https://docs.google.com/document/d/1F-c7eYjCM9OgmDpR_-auu3lrX5PYlCRJ0W492UaNPNI/edit?usp=sharing'} target='_blank'>
             <button>Ver mi CV (Español)</button>
           </Link>
           <Link to={'/es/proyectos'}>

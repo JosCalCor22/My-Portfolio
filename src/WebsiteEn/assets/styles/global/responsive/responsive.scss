@@ -40,13 +40,16 @@
       width: 100%;
     }
     .experience__section{
-      &--card1, &--card2, &--card3, &--card4{
+      &--card1, &--card2, &--card3, &--card4, &--card5{
         flex-direction: column;
         display: flex;
         gap: 0;
       }
       .card__experience{
         &--info{
+          p{
+            min-width: 105px;
+          }
           display: flex;
           gap: 24px;
         }

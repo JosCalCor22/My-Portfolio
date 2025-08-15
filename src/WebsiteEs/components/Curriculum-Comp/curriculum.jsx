@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 /* Components */
 import GraphSection from './components/Graphs.jsx';
-import { MoreInfo } from './components/moreInfo..jsx';
+import { MoreInfo } from './components/moreInfo.jsx';
 import ExperienceSection from './components/Experience.jsx';
 
 /* SVG */

@@ -4,119 +4,81 @@ export default function Experience(){
       <div className="experience__section--title">
         <h2>Experiencia</h2>
       </div>
-      <div className="experience__section--card1 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>01/10/2023 - Actual</p>
+        {/* CARD 1 */}  
+        <div className="experience__section--card1 card__experience">
+          <div className="card__experience--info">
+            <div className="card__experience--info-date">
+              <h3>Fecha:</h3>
+              <p>01/10/2025 - Actual</p>
+            </div>
+            <div className="card__experience--info-job">
+              <h3>Puesto:</h3>
+              <p>CEO & Founder</p>
+            </div>
+            <div className="card__experience--info-company">
+              <h3>Empresa:</h3>
+              <p>LehreTech</p>
+            </div>
           </div>
-          <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>CTO</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>BienestarTu</p>
-          </div>
+          <article className="card__experience--description">
+            <ul>
+              <li>Fundador y líder en el desarrollo de modelo de negocio completo y en toma de decisiones estratégicas para el lanzamiento al mercado.</li>
+              <li>Diseño y desarrollo de producto robusto, asumiendo roles en diseño, desarrollo, QA y el área comercial, con la IA como componente central del producto.</li>
+              <li>Implementación de varios modelos de IA para generar texto, imágenes y videos, creando una solución integral para los clientes.</li>
+              <li>Adquisición y gestión de clientes, fortaleciendo mis habilidades blandas y mi red de contactos para asegurar que el mensaje de venta fuera certero y que el producto satisficiera sus necesidades.</li>
+            </ul>
+          </article>
         </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>Durante mi tiempo en BienestarTu, contribuí significativamente al desarrollo y mantenimiento de la página web mediante herramientas noCode y programación frontend con React, Tailwind, y HTML.</li>
-            <li>Participé activamente en decisiones administrativas de la startup y colaboré en procesos de contratación, consolidando así mi papel integral en el crecimiento y éxito de la empresa.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card2 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>18/02/2024 - 23/04/2024</p>
+
+        {/* CARD 2 */}
+        <div className="experience__section--card2 card__experience">
+          <div className="card__experience--info">
+            <div className="card__experience--info-date">
+              <h3>Fecha:</h3>
+              <p>01/07/2024 - 25/10/2024</p>
+            </div>
+            <div className="card__experience--info-job">
+              <h3>Puesto:</h3>
+              <p>Desarrollador Frontend</p>
+            </div>
+            <div className="card__experience--info-company">
+              <h3>Empresa:</h3>
+              <p>Norangle Solutions</p>
+            </div>
           </div>
-          <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>Hackathon Filecoin</p>
-          </div>
+          <article className="card__experience--description">
+            <ul>
+              <li>Desarrollo de página web completa utilizando tecnologías como React y Tailwind.</li>
+              <li>Creación de prototipos adaptativos en Figma, asegurando un diseño óptimo y un proceso de desarrollo eficiente.</li>
+              <li>Colaboración en la estructuración de productos para clientes, lo que enriqueció mi perspectiva sobre el trato y la visualización de sus necesidades.</li>
+            </ul>
+          </article>
         </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>Diseñé y desarrollé la interfaz de usuario del proyecto SciFile utilizando React.js, TypeScript, Sass y CSS. Creamos una interfaz intuitiva y fácil de usar para la gestión de articulos en la red Filecoin y por ultimo pero no menos importante, optimizamos el rendimiento del frontend para garantizar una experiencia fluida y receptiva.</li>
-            <li>Uno de los objetivos mas inportantes era integrar mi trabajo con los componentes desarrollados por otros miembros del equipo para crear un producto final cohesivo. Mis habilidades y conocimientos técnicos ayudaron el éxito general del proyecto pues creamos un aplicación fullstack junto con una conexión Blockchain.</li>
-            <li>Como grupo obtuvimos el tercer puesto en la Hackathon Filecoin Data Economy. Me siento orgulloso del avance personal y profesional que demostré durante la hackathon, además de mejorar y fortalecer mis habilidades y mis conocimientos como frontend developer.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card3 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>17/02/2024 - 18/02/2024</p>
+
+        {/* CARD 3 */}
+        <div className="experience__section--card3 card__experience">
+          <div className="card__experience--info">
+            <div className="card__experience--info-date">
+              <h3>Fecha:</h3>
+              <p>01/10/2023 - 30/04/2024</p>
+            </div>
+            <div className="card__experience--info-job">
+              <h3>Puesto:</h3>
+              <p>CTO</p>
+            </div>
+            <div className="card__experience--info-company">
+              <h3>Empresa:</h3>
+              <p>BienestarTu</p>
+            </div>
           </div>
-          <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>Hackathon Solana</p>
-          </div>
+          <article className="card__experience--description">
+            <ul>
+              <li>Liderazgo en el desarrollo y mantenimiento de la página web utilizando herramientas NoCode y programación Frontend con React, Tailwind y HTML.</li>
+              <li>Participación en decisiones administrativas y procesos de contratación, contribuyendo significativamente al crecimiento y éxito de la startup.</li>
+              <li>Desarrollo de arquitectura y la gestión de roles para la elaboración del backend, asegurando la integración perfecta de los sistemas</li>
+            </ul>
+          </article>
         </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>En la Hackathon de Solana, lideré como frontend developer en 24 horas. Enfoque en React.js y Sass para una interfaz atractiva. Aunque no ganamos, QuantumSapiens captó la atención, marcando su evolución. Este desafío impulsó mis habilidades y marcó una etapa emocionante en mi carrera.</li>
-            <li>QuantumSapiens atrajo a dos jueces, allanando el camino para su reconocimiento profesional. Este desafío impulsó mis habilidades técnicas y dejó una impresión duradera.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card4 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>08/11/2023 - 10/12/2023</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>Hackathon Chainlink</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>En mi participación en la hackathon de Chainlink, expandí mis conocimientos en desarrollo blockchain, destacando mis habilidades en Solidity.</li>
-            <li>Colaboré en la construcción del proyecto con un equipo de 5 personas, utilizando tecnologías como React, CSS, HTML y Solidity. Aunque no obtuvimos un premio principal, recibimos reconocimientos de sponsors como Scroll y Tableland.</li>
-            <li>Contribuí al uso de librerías como Hardhat para integrar contratos inteligentes con la interfaz de React, demostrando versatilidad tanto en el frontend como en el backend.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card5 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Fecha:</h3>
-            <p>23/06/2022 - Actual</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Puesto:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Empresa:</h3>
-            <p>Proyectos personales</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>He destacado por mi capacidad para trabajar tanto de manera individual como en equipo en diversos proyectos. Aquí, he aplicado y perfeccionado mis habilidades en desarrollo frontend, abordando proyectos de diferentes escalas con un enfoque constante en la mejora continua.</li>
-            <li>A través de mi repositorio en GitHub, he fortalecido no solo mis habilidades de programación, sino también mi destreza en el uso de control de versiones como Git Bash.</li>
-            <li>La experiencia de trabajar con la terminal me ha permitido comprender y dominar eficientemente diversas operaciones, como la creación, edición y eliminación de código.</li>
-          </ul>
-        </article>
-      </div>
     </>
   );
 }

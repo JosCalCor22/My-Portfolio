@@ -12,10 +12,10 @@ function Index() {
               <p>In what language would you like to see my portfolio?</p>
             </div>
             <div className="container__welcome--btns">
-              <Link to={'/en/home'} target='_blank' rel='noreferrer'>
+              <Link to={'/en/home'} rel='noreferrer'>
                 <button>English</button>
               </Link>
-              <Link to={'/es/home'} target='_blank' rel='noreferrer'>
+              <Link to={'/es/home'} rel='noreferrer'>
                 <button>Español</button>
               </Link>
             </div>

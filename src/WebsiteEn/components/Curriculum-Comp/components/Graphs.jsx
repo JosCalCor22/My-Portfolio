@@ -26,10 +26,9 @@ ChartJS.register(
 );
 
 export default function Graphs() {
-  /* let average = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].reverse(); */
-  let skills = ['JavaScript', 'ReactJS', 'HTML', 'CSS', 'Sass', 'Tailwind', 'GitBash', 'English', 'German'];
+  let skills = ['React & TypeScript', 'Design(UX/UI)', 'Leadership', 'Teamwork', 'Responsibility', 'Communication', 'English', 'German'];
 
-  let xValuesAxis = [40, 85, 80, 80, 90, 100, 100, 85, 90].reverse();
+  let xValuesAxis = [40, 85, 80, 100, 90, 90, 85, 90].reverse();
   
   const options = {
     indexAxis: 'y',

@@ -4,11 +4,64 @@ export default function Experience(){
       <div className="experience__section--title">
         <h2>Experience</h2>
       </div>
+
+      {/* CARD #1 */}
       <div className="experience__section--card1 card__experience">
         <div className="card__experience--info">
           <div className="card__experience--info-date">
             <h3>Date:</h3>
-            <p>01/10/2023 - Present</p>
+            <p>01/10/2025 - Present</p>
+          </div>
+          <div className="card__experience--info-job">
+            <h3>Job:</h3>
+            <p>CEO & Founder</p>
+          </div>
+          <div className="card__experience--info-company">
+            <h3>Company:</h3>
+            <p>LehreTech</p>
+          </div>
+        </div>
+        <article className="card__experience--description">
+          <ul>
+            <li>Founder and leader in the development of a complete business model and in strategic decision-making for market launch.</li>
+            <li>Designed and developed a robust product, assuming roles in design, development, QA, and sales, with AI as a core component of the product.</li>
+            <li>Implemented various AI models to generate text, images, and videos, creating a comprehensive solution for clients.</li>
+            <li>Acquired and managed clients, strengthening my soft skills and network to ensure the sales message was accurate and that the product met their needs.</li>
+          </ul>
+        </article>
+      </div>
+
+      {/* CARD #2 */}
+      <div className="experience__section--card2 card__experience">
+        <div className="card__experience--info">
+          <div className="card__experience--info-date">
+            <h3>Date:</h3>
+            <p>01/07/2024 - 25/10/2024</p>
+          </div>
+          <div className="card__experience--info-job">
+            <h3>Job:</h3>
+            <p>Frontend Developer</p>
+          </div>
+          <div className="card__experience--info-company">
+            <h3>Company:</h3>
+            <p>Norangle Solutions</p>
+          </div>
+        </div>
+        <article className="card__experience--description">
+          <ul>
+            <li>Complete website development using technologies such as React and Tailwind.</li>
+            <li>Created responsive prototypes in Figma, ensuring an optimal design and efficient development process.</li>
+            <li>Collaborated on structuring products for clients, which enriched my perspective on how to approach and visualize their needs.</li>
+          </ul>
+        </article>
+      </div>
+
+      {/* CARD #3 */}
+      <div className="experience__section--card3 card__experience">
+        <div className="card__experience--info">
+          <div className="card__experience--info-date">
+            <h3>Date:</h3>
+            <p>01/10/2023 - 30/04/2024</p>
           </div>
           <div className="card__experience--info-job">
             <h3>Job:</h3>
@@ -21,99 +74,9 @@ export default function Experience(){
         </div>
         <article className="card__experience--description">
           <ul>
-            <li>During my time at BienestarTu, I contributed significantly to the development and maintenance of the website using noCode tools and frontend programming with React, Tailwind, and HTML.</li>
-            <li>I actively participated in administrative decisions of the startup and collaborated in hiring processes, thus consolidating my integral role in the growth and success of the company.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card2 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Date:</h3>
-            <p>18/02/2024 - 23/04/2024</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Job:</h3>
-            <p>Frontend Developer</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Company:</h3>
-            <p>Hackathon Filecoin</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>Designed and developed the user interface of the SciFile project using React.js, TypeScript, Sass and CSS. We created an intuitive and easy-to-use interface for item management on the Filecoin network and last but not least, we optimized the frontend performance to ensure a smooth and responsive experience.</li>
-            <li>One of the most important goals was to integrate my work with components developed by other team members to create a cohesive final product. My skills and technical knowledge helped the overall success of the project as we created a fullstack application along with a Blockchain connection.</li>
-            <li>As a group we obtained third place in the Filecoin Data Economy Hackathon. I am proud of the personal and professional progress that I demonstrated during the hackathon, in addition to improving and strengthening my skills and knowledge as a frontend developer.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card3 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Date:</h3>
-            <p>17/02/2024 - 18/02/2024</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Job:</h3>
-            <p>Frontend Developer</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Company:</h3>
-            <p>Hackathon Solana</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>At the Solana Hackathon, I led as a frontend developer in 24 hours. Focus on React.js and Sass for an attractive interface. Although we didn't win, QuantumSapiens captured attention, marking its evolution. This challenge boosted my skills and marked an exciting stage in my career.</li>
-            <li>QuantumSapiens attracted two judges, paving the way for its professional recognition. This challenge boosted my technical skills and left a lasting impression.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card4 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Date:</h3>
-            <p>08/11/2023 - 10/12/2023</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Job:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Company:</h3>
-            <p>Hackathon Chainlink</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>In my participation in the Chainlink hackathon, I expanded my knowledge in blockchain development, highlighting my skills in Solidity.</li>
-            <li>I collaborated in the construction of the project with a team of 5 people, using technologies such as React, CSS, HTML and Solidity. Although we did not win a main prize, we received recognition from sponsors such as Scroll and Tableland.</li>
-            <li>I contributed to the use of libraries such as Hardhat to integrate smart contracts with the React interface, demonstrating versatility in both the frontend and backend.</li>
-          </ul>
-        </article>
-      </div>
-      <div className="experience__section--card5 card__experience">
-        <div className="card__experience--info">
-          <div className="card__experience--info-date">
-            <h3>Date:</h3>
-            <p>23/06/2022 - Actual</p>
-          </div>
-          <div className="card__experience--info-job">
-            <h3>Job:</h3>
-            <p>Desarrollador Frontend</p>
-          </div>
-          <div className="card__experience--info-company">
-            <h3>Company:</h3>
-            <p>Personal Proyects</p>
-          </div>
-        </div>
-        <article className="card__experience--description">
-          <ul>
-            <li>I have stood out for my ability to work both individually and as a team on various projects. Here, I have applied and honed my skills in frontend development, tackling projects of different scales with a constant focus on continuous improvement.</li>
-            <li>Through my GitHub repository, I have strengthened not only my programming skills, but also my proficiency in using version control like Git Bash.</li>
-            <li>The experience of working with the terminal has allowed me to efficiently understand and master various operations, such as creating, editing and deleting code.</li>
+            <li>Leadership in website development and maintenance using NoCode tools and front-end programming with React, Tailwind, and HTML.</li>
+            <li>Participation in administrative decisions and hiring processes, significantly contributing to the startup's growth and success.</li>
+            <li>Architectural development and role management for backend development, ensuring seamless systems integration.</li>
           </ul>
         </article>
       </div>

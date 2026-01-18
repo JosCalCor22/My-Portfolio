@@ -15,18 +15,18 @@ import { CurriculumEs } from './WebsiteEs/components/Curriculum-Comp/curriculum'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
-      <Routes>
-        {/* Ruta pricipal */}
-        <Route index Component={Index} />
-        {/* Rutas padres */}
-        <Route path='/es/home' Component={WebsiteEs} />
-        <Route path='/en/home' Component={WebsiteEn} />
-        {/* Rutas para componentes CV */}
-        <Route path='/en/curriculum' Component={CurriculumEn} />
-        <Route path='/es/curriculum' Component={CurriculumEs} />
-        {/* Rutas para componentes Proyectos */}
-        <Route path='/en/proyects' Component={ProyectsEn} />
-        <Route path='/es/proyectos' Component={ProyectsEs} />
-      </Routes>
-    </Router>
+    <Routes>
+      {/* Ruta pricipal */}
+      <Route index Component={Index} />
+      {/* Rutas padres */}
+      <Route path='/es/home' Component={WebsiteEs} />
+      <Route path='/en/home' Component={WebsiteEn} />
+      {/* Rutas para componentes CV */}
+      <Route path='/en/curriculum' Component={CurriculumEn} />
+      <Route path='/es/curriculum' Component={CurriculumEs} />
+      {/* Rutas para componentes Proyectos */}
+      <Route path='/en/proyects' Component={ProyectsEn} />
+      <Route path='/es/proyectos' Component={ProyectsEs} />
+    </Routes>
+  </Router>
 )

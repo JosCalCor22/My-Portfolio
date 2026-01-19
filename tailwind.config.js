@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'pri-color': '#000000',
+        'sec-color': '#FFFFFF',
+        'ter-color': '#200730',
+      },
+
+      fontFamily: {
+        hansen: ['Hansen Grotesk', 'sans-serif'],
+        figtree: ['Figtree', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

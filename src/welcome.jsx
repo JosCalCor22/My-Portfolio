@@ -5,7 +5,7 @@ function Index() {
     <section className="container2">
       <section className="container__welcome">
         <div className="container__welcome--title">
-          <p>¿En que lenguaje quieres ver mi portafolio?</p>
+          <p className='text-blue-700'>¿En que lenguaje quieres ver mi portafolio?</p>
           <p>In what language would you like to see my portfolio?</p>
         </div>
         <div className="container__welcome--btns">

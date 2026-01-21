@@ -11,7 +11,9 @@ export default {
         'sec-color': '#FFFFFF',
         'ter-color': '#200730',
       },
-
+      backgroundImage: {
+        'custom-bg': "url('/public/images/bg.svg')",
+      },
       fontFamily: {
         hansen: ['Hansen Grotesk', 'sans-serif'],
         figtree: ['Figtree', 'sans-serif'],

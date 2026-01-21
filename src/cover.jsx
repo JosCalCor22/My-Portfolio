@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Index() {
   return (
-    <section className="container2">
+    <section className="bg-custom-bg w-full h-screen bg-cover bg-center">
       <section className="container__welcome">
         <div className="container__welcome--title">
           <p className='text-blue-700'>¿En que lenguaje quieres ver mi portafolio?</p>

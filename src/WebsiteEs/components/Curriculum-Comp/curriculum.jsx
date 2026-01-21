@@ -7,11 +7,8 @@ import GraphSection from './components/Graphs.jsx';
 import { MoreInfo } from './components/moreInfo.jsx';
 import ExperienceSection from './components/Experience.jsx';
 
-/* SVG */
-import ArrowSVG from '../../assets/svg/Arrow-Icon.svg';
-
-function CurriculumEs(){
-  return(
+function CurriculumEs() {
+  return (
     <section className="container__curriculum">
       <section className="title__section">
         <div className="title__section--items">

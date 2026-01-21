@@ -11,15 +11,8 @@ import { SiTypescript } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 
-/* img */
-import project0 from '../img/imgProject0.png';
-import project1 from '../img/imgProject1.png';
-import project2 from '../img/imgProject2.png';
-import project3 from '../img/imgProject3.png';
-import project4 from '../img/imgProject4.png'
-
 function ProjectsCards() {
-  return(
+  return (
     <>
       <section className="projects__section--card">
         <div className="card__title">
@@ -57,7 +50,7 @@ function ProjectsCards() {
           <h2>Tricky | Tic-Tac-Toe</h2>
         </div>
         <div className="card__img">
-          <img src={project1} alt='Imagen proyecto 1' />
+          <img alt='Imagen proyecto 1' />
         </div>
         <div className="card__info">
           <div className="card__info--tech">
@@ -88,7 +81,7 @@ function ProjectsCards() {
           <h2>Alura Traductor</h2>
         </div>
         <div className="card__img">
-          <img src={project2} alt='Imagen proyecto 2' />
+          <img alt='Imagen proyecto 2' />
         </div>
         <div className="card__info">
           <div className="card__info--tech">
@@ -117,7 +110,7 @@ function ProjectsCards() {
           <h2>Random Quote</h2>
         </div>
         <div className="card__img">
-          <img src={project3} alt='Imagen proyecto 2' />
+          <img alt='Imagen proyecto 2' />
         </div>
         <div className="card__info">
           <div className="card__info--tech">
@@ -148,7 +141,7 @@ function ProjectsCards() {
           <h2>LoopStudio</h2>
         </div>
         <div className="card__img">
-          <img src={project4} alt='Imagen proyecto 2' />
+          <img alt='Imagen proyecto 2' />
         </div>
         <div className="card__info">
           <div className="card__info--tech">

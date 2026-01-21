@@ -2,12 +2,6 @@
 import { Navigation } from './components/navigation'
 import { TargetProfile } from './components/targetProfile'
 
-/* SVG */
-import BackgroundSVG from '../../assets/svg/Background.svg'
-
-/* Style files */
-import '../../assets/styles/index.scss'
-
 function App() {
   return (
     <section className='container'>
@@ -20,7 +14,7 @@ function App() {
             <h2>Hola mundo🌐</h2>
             <h3>Bienvenidos a mi portafolio profesional</h3>
           </div>
-            <Navigation />           
+          <Navigation />
           <div className='targetInfo__description'>
             <p>Apasionado desarrollador Frontend con <span>dos años de experiencia,</span> he trazado mi propio camino de <span>aprendizaje autodidacta.</span> Mi versatilidad se refleja en la participación exitosa en diversos proyectos, tanto colaborativos como individuales. Destaco por mi capacidad para enfrentar <span>desafíos de manera creativa y eficiente,</span> contribuyendo al desarrollo de soluciones innovadoras y funcionales. Mi enfoque autodidacta garantiza una actualización constante en las últimas tecnologías. <span>Emocionado por seguir creciendo y aportando al mundo del desarrollo frontend.</span></p>
           </div>

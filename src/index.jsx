@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 /* Components */
-import { Index } from './cover'
+import { Index } from './home'
 /* Components Spanish */
 import { WebsiteEs } from './WebsiteEs/main'
 import { ProyectsEs } from './WebsiteEs/components/Projects-Comp/projects'

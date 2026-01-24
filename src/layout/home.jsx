@@ -8,7 +8,9 @@ import { Education } from './components/education'
 import { Experience } from './components/experience'
 
 function Index() {
-  const [currentBody, setCurrentBody] = useState('cover')
+  const [currentBody, setCurrentBody] = useState('education')
+
+  console.log(currentBody)
 
   return (
     <section className="bg-[url('src/public/assets/svg/bg.svg')] w-full h-screen bg-cover bg-center">
@@ -37,14 +39,14 @@ function Index() {
 
       <section className='h-[80%] w-full px-20 py-5'>
         {
-          currentBody != 'experience' ? (
+          currentBody !== 'experience' ? (
             <section className='h-full w-full flex gap-2.5'>
               <div className='w-[50%] h-full'>
                 <img src="src/public/assets/images/Photo_Profile.png" className='h-full' alt="Profile" />
               </div>
-              <Cover props={currentBody} />
-              <About props={currentBody} />
-              <Education props={currentBody} />
+              <Cover currentBody={currentBody} />
+              <About currentBody={currentBody} />
+              <Education currentBody={currentBody} />
             </section>
           ) : (
             <section className='h-full w-full flex'>

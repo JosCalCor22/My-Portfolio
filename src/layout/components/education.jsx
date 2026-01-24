@@ -4,13 +4,13 @@ import { useState } from 'react'
 /* Scripts */
 import { educationData } from '../../scripts/education'
 
-const Education = (currentBody) => {
+const Education = ({ currentBody }) => {
   const [currentCard, setCurrentCard] = useState('sena');
 
   const filteredData = educationData.filter((item) => item.state === currentCard)
 
   return (
-    <section className={currentBody === 'education' ? 'w-[50%] h-full' : 'hidden'}>
+    <section className={`w-[50%] h-full flex-col ${currentBody === 'education' ? 'flex' : 'hidden'}`}>
       <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Aprendizaje Continuo</h1>
 
       {

@@ -1,4 +1,4 @@
-const Cover = (currentBody) => {
+const Cover = ({ currentBody }) => {
   return (
     <div className={currentBody === 'cover' ? 'w-[50%] h-full' : 'hidden'}>
       <h1 className='text-seccolor text-4xl font-bold font-secfont py-3'>Joseth Calderón</h1>

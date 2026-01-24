@@ -4,7 +4,7 @@ import { useState } from 'react'
 /* Scripts */
 import { aboutMeData } from '../../scripts/aboutme'
 
-const About = (currentBody) => {
+const About = ({ currentBody }) => {
   /* Hooks */
   const [typeCard, setTypeCard] = useState('engineerProduct')
 

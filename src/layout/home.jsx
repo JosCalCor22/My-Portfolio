@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
 
+/* Components */
+import { Cover } from './components/cover'
+import { About } from './components/about'
+
 function Index() {
   return (
     <section className="bg-[url('src/public/assets/svg/bg.svg')] w-full h-screen bg-cover bg-center">
@@ -7,7 +11,7 @@ function Index() {
         <div className="absolute bottom-2.5 left-0">
           <img src="src/public/assets/svg/LineVector.svg" t="Line Vector" />
         </div>
-        <nav className=' h-full flex gap-5 items-end pr-20'>
+        <nav className=' h-full flex gap-10 items-end pr-20'>
           <button className='text-seccolor h-fit'>
             <Link to={'/es/home'} rel='noreferrer'>Portada</Link>
           </button>
@@ -30,14 +34,8 @@ function Index() {
         <div className='w-[50%] h-full'>
           <img src="src/public/assets/images/Photo_Profile.png" className='h-full' alt="Profile" />
         </div>
-        <div className='w-[50%] h-full'>
-          <h1 className='text-seccolor text-5xl font-bold font-secfont py-3'>Joseth Calderón</h1>
-          <h2 className='text-seccolor text-4xl font-bold font-secfont'>UX Engineer & Product Strategist</h2>
-          <div className='flex flex-col gap-2.5 py-5'>
-            <p className='text-seccolor text-lg font-prifont'>Mi pasión es construir el puente donde el diseño de producto y el código se encuentran para crear soluciones escalables.</p>
-            <p className='text-seccolor text-lg font-prifont'>Transformo ideas complejas en interfaces intuitivas que cualquier usuario puede navegar. Mi experiencia liderando Startups y compitiendo en Hackathons internacionales me permite combinar la precisión del código con un diseño óptimo y una visión estratégica centrada en el consumidor.</p>
-          </div>
-        </div>
+        {/* <Cover /> */}
+        <About />
       </section>
 
       <footer className='h-[10%] w-full relative flex justify-start'>

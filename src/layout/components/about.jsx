@@ -4,7 +4,7 @@ import { useState } from 'react'
 /* Scripts */
 import { aboutMeData } from '../../scripts/aboutme'
 
-function About() {
+const About = (currentBody) => {
   /* Hooks */
   const [typeCard, setTypeCard] = useState('engineerProduct')
 
@@ -13,8 +13,8 @@ function About() {
   const cardItems = filteredData.filter((item) => item.name !== 'title')
 
   return (
-    <section className='w-[50%] h-full'>
-      <h1 className='text-seccolor text-5xl font-bold font-secfont pt-3'>Experticia & Enfoque</h1>
+    <section className={currentBody === 'about' ? 'w-[50%] h-full' : 'hidden'}>
+      <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Experticia & Enfoque</h1>
 
       <div className="gap-2.5 py-5 h-full">
         {titleItem && (

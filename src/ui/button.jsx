@@ -12,11 +12,11 @@ import { GoHome } from "react-icons/go";
 import { FiPhone } from "react-icons/fi";
 
 
-const ButtonComponent = ({ text, onClick, whereIs, isRotated, isHover, typeButton }) => {
+const ButtonComponent = ({ text, onClick, whereIs, isRotated, isHover, isResponsive, typeButton }) => {
   return (
     <button
       onClick={onClick}
-      className={`${whereIs === 'education' ? 'py-4 font-bold text-lg w-full' : 'gap-2.5 py-2'} ${whereIs === 'goodbye' ? 'w-[200px]' : ''} ${whereIs === 'contact' ? 'w-full' : ''} flex justify-center items-center text-center border-2 border-seccolor text-seccolor rounded-xl hover:cursor-pointer hover:scale-105 hover:bg-seccolor hover:text-pricolor font-bold transition-all duration-300 ease-in-out`}
+      className={`${whereIs === 'education' ? 'py-4 font-bold text-lg w-full' : 'gap-2.5 py-2'} ${whereIs === 'goodbye' ? 'w-[200px]' : ''} ${whereIs === 'contact' ? 'w-full' : ''} ${isResponsive ? 'w-full' : ''} flex justify-center items-center text-center border-2 border-seccolor text-seccolor rounded-xl hover:cursor-pointer hover:scale-105 hover:bg-seccolor hover:text-pricolor font-bold transition-all duration-300 ease-in-out`}
     >
       {
         whereIs === 'contact' ? (

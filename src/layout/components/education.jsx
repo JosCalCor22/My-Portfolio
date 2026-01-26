@@ -16,7 +16,7 @@ const Education = () => {
   const filteredData = educationData.filter((item) => item.state === currentCard)
 
   return (
-    <section className='w-[50%] h-full flex-col flex'>
+    <section className='w-full lg:w-[50%] h-full flex-col flex'>
       <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Aprendizaje Continuo</h1>
 
       <AnimatePresence mode='wait'>
@@ -29,24 +29,31 @@ const Education = () => {
         >
           {
             filteredData.map((item) => (
-              <div key={item.id} className='py-5'>
+              <motion.div
+                key={item.id}
+                className='py-5'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <h2 className='text-seccolor text-2xl font-bold font-secfont'>{item.name}</h2>
-                <ul className='flex flex-col gap-2 py-4 pl-8'>
-                  <div className='flex gap-2'>
-                    <li className='text-seccolor list-disc font-bold'>Duración:</li>
-                    <p className='text-seccolor'>{item.duration}</p>
+                <ul className='flex flex-col gap-5 py-4 lg:pl-8 lg:gap-2'>
+                  <div className='flex flex-col gap-2 lg:flex-row'>
+                    <li className='text-seccolor text-xl lg:list-disc font-bold'>Duración:</li>
+                    <p className='text-seccolor text-left text-lg'>{item.duration}</p>
                   </div>
-                  <div className='flex gap-2'>
-                    <li className='text-seccolor list-disc font-bold'>Instituto:</li>
-                    <p className='text-seccolor'>{item.institution}</p>
+                  <div className='flex flex-col gap-2 lg:flex-row'>
+                    <li className='text-seccolor text-xl lg:list-disc font-bold'>Instituto:</li>
+                    <p className='text-seccolor text-left text-lg'>{item.institution}</p>
                   </div>
-                  <div className='flex gap-2'>
-                    <li className='text-seccolor w-fit wrap list-disc font-bold whitespace-nowrap'>Puntos Claves:</li>
-                    <div className='flex flex-col gap-2'>
-                      <p className='text-seccolor'>{item.keypoints.key1}</p>
-                      <p className='text-seccolor'>{item.keypoints.key2}</p>
-                      <p className='text-seccolor'>{item.keypoints.key3}</p>
-                    </div>
+                  <div className='flex flex-col gap-2 lg:flex-row'>
+                    <li className='text-seccolor text-xl font-bold lg:whitespace-nowrap lg:w-fit lg:wrap lg:list-disc'>Puntos Claves:</li>
+                    <ul className='flex flex-col gap-2 pl-6 lg:pl-0'>
+                      <li className='text-seccolor text-lg list-disc lg:list-item'>{item.keypoints.key1}</li>
+                      <li className='text-seccolor text-lg list-disc lg:list-item'>{item.keypoints.key2}</li>
+                      <li className='text-seccolor text-lg list-disc lg:list-item'>{item.keypoints.key3}</li>
+                    </ul>
                   </div>
                 </ul>
 
@@ -55,7 +62,7 @@ const Education = () => {
                   text='Siguiente'
                   whereIs='education'
                 />
-              </div>
+              </motion.div>
             ))
           }
         </motion.section>

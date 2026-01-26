@@ -43,10 +43,10 @@ const Experience = () => {
   const filteredData = experienceData.filter((item) => item.cards.currentCard === currentCard)
 
   return (
-    <section className='w-full h-full px-20 py-5'>
-      <div className='flex justify-between mb-2.5'>
+    <section className='w-full h-full flex-col flex gap-5 lg:gap-2.5 lg:px-20 lg:py-5 overflow-x-hidden'>
+      <div className='flex justify-between'>
         <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Experiencia Laboral</h1>
-        <div className='flex gap-2'>
+        <div className='hidden lg:flex gap-2'>
           <button onClick={() => handlePrev(experienceData.find((item) => item.cards.currentCard === currentCard).cards.prevCard)}>
             <ButtonComponent
               whereIs='experience'
@@ -74,36 +74,36 @@ const Experience = () => {
         >
           {
             filteredData.map((item) => (
-              <div key={item.id} className='flex gap-5 p-5'>
-                <div className='flex flex-col gap-2.5'>
-                  <h2 className='text-seccolor text-2xl font-bold font-secfont w-[400px]'>{item.company}</h2>
-                  <ul className='flex flex-col gap-1 pl-8'>
-                    <div className='flex gap-2'>
-                      <li className='text-seccolor list-disc font-bold'>Duración:</li>
-                      <p className='text-seccolor'>{item.duration}</p>
+              <div key={item.id} className='flex flex-col lg:flex-row gap-5 p-5 h-full overflow-y-auto lg:overflow-hidden'>
+                <div className='flex flex-col gap-2.5 w-full lg:w-1/2'>
+                  <h2 className='text-seccolor text-2xl font-bold font-secfont lg:w-[400px]'>{item.company}</h2>
+                  <ul className='flex flex-col gap-2.5 lg:gap-1 lg:pl-8'>
+                    <div className='flex flex-col gap-1 lg:gap-2 lg:flex-row'>
+                      <li className='text-seccolor text-xl font-bold lg:list-disc'>Duración:</li>
+                      <p className='text-seccolor text-lg'>{item.duration}</p>
                     </div>
-                    <div className='flex gap-2'>
-                      <li className='text-seccolor list-disc font-bold'>Rol:</li>
-                      <p className='text-seccolor'>{item.role}</p>
+                    <div className='flex flex-col gap-1 lg:gap-2 lg:flex-row'>
+                      <li className='text-seccolor text-xl font-bold lg:list-disc'>Rol:</li>
+                      <p className='text-seccolor text-lg'>{item.role}</p>
                     </div>
                   </ul>
                 </div>
 
-                <div className='flex flex-col gap-2.5'>
+                <div className='flex flex-col gap-2.5 w-full lg:w-1/2'>
                   <h2 className='text-seccolor text-2xl font-bold font-secfont'>Puntos a Destacar</h2>
-                  <div className='flex flex-col gap-2.5 pl-5'>
+                  <div className='flex flex-col gap-2.5 lg:pl-5'>
                     <ul className='flex flex-col gap-1'>
-                      <li className='text-seccolor list-disc'>
+                      <li className='text-seccolor text-lg lg:list-disc'>
                         <ReactMarkdown>{item.highlights.key1}</ReactMarkdown>
                       </li>
                     </ul>
                     <ul className='flex flex-col gap-1'>
-                      <li className='text-seccolor list-disc'>
+                      <li className='text-seccolor text-lg lg:list-disc'>
                         <ReactMarkdown>{item.highlights.key2}</ReactMarkdown>
                       </li>
                     </ul>
                     <ul className='flex flex-col gap-1'>
-                      <li className='text-seccolor list-disc'>
+                      <li className='text-seccolor text-lg lg:list-disc'>
                         <ReactMarkdown>{item.highlights.key3}</ReactMarkdown>
                       </li>
                     </ul>
@@ -114,6 +114,22 @@ const Experience = () => {
           }
         </motion.div>
       </AnimatePresence>
+      <div className='flex lg:hidden gap-2 mt-auto'>
+        <button className='w-full' onClick={() => handlePrev(experienceData.find((item) => item.cards.currentCard === currentCard).cards.prevCard)}>
+          <ButtonComponent
+            whereIs='experience'
+            isRotated={true}
+            isResponsive={true}
+          />
+        </button>
+        <button className='w-full' onClick={() => handleNext(experienceData.find((item) => item.cards.currentCard === currentCard).cards.nextCard)}>
+          <ButtonComponent
+            whereIs='experience'
+            isRotated={false}
+            isResponsive={true}
+          />
+        </button>
+      </div>
     </section>
   );
 };

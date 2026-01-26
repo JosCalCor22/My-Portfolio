@@ -4,13 +4,16 @@ import { useState } from 'react'
 /* Scripts */
 import { educationData } from '../../scripts/education'
 
-const Education = ({ currentBody }) => {
+/* Components */
+import { ButtonComponent } from '../../ui/button'
+
+const Education = () => {
   const [currentCard, setCurrentCard] = useState('sena');
 
   const filteredData = educationData.filter((item) => item.state === currentCard)
 
   return (
-    <section className={`w-[50%] h-full flex-col ${currentBody === 'education' ? 'flex' : 'hidden'}`}>
+    <section className='w-[50%] h-full flex-col flex'>
       <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Aprendizaje Continuo</h1>
 
       {
@@ -35,9 +38,12 @@ const Education = ({ currentBody }) => {
                 </div>
               </div>
             </ul>
-            <button
+
+            <ButtonComponent
               onClick={() => setCurrentCard(item.nextCard)}
-              className='text-seccolor w-full border-2 border-seccolor py-4 rounded-xl items-center font-bold text-lg'>Siguiente</button>
+              text='Siguiente'
+              whereIs='education'
+            />
           </div>
         ))
       }

@@ -5,8 +5,10 @@ import { useState } from 'react'
 import { experienceData } from '../../scripts/experience'
 
 /* Libreries */
-import { IoIosArrowForward } from "react-icons/io";
 import ReactMarkdown from 'react-markdown';
+
+/* Components */
+import { ButtonComponent } from '../../ui/button'
 
 const Experience = () => {
   const [currentCard, setCurrentCard] = useState('LehreTech')
@@ -18,11 +20,17 @@ const Experience = () => {
       <div className='flex justify-between mb-2.5'>
         <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Experiencia Laboral</h1>
         <div className='flex gap-2'>
-          <button onClick={() => setCurrentCard(experienceData.find((item) => item.cards.currentCard === currentCard).cards.prevCard)} className='border-2 border-seccolor rounded-lg p-2'>
-            <IoIosArrowForward className='text-seccolor w-6 h-6 rotate-180' />
+          <button onClick={() => setCurrentCard(experienceData.find((item) => item.cards.currentCard === currentCard).cards.prevCard)}>
+            <ButtonComponent
+              whereIs='experience'
+              isRotated={true}
+            />
           </button>
-          <button onClick={() => setCurrentCard(experienceData.find((item) => item.cards.currentCard === currentCard).cards.nextCard)} className='border-2 border-seccolor rounded-lg p-2'>
-            <IoIosArrowForward className='text-seccolor w-6 h-6' />
+          <button onClick={() => setCurrentCard(experienceData.find((item) => item.cards.currentCard === currentCard).cards.nextCard)}>
+            <ButtonComponent
+              whereIs='experience'
+              isRotated={false}
+            />
           </button>
         </div>
       </div>

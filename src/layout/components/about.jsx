@@ -4,16 +4,17 @@ import { useState } from 'react'
 /* Scripts */
 import { aboutMeData } from '../../scripts/aboutme'
 
-const About = ({ currentBody }) => {
+const About = () => {
   /* Hooks */
   const [typeCard, setTypeCard] = useState('engineerProduct')
+  const [getNumberCard, setGetNumberCard] = useState(0)
 
   const filteredData = aboutMeData.filter((item) => item.type === typeCard)
   const titleItem = filteredData.find((item) => item.name === 'title')
   const cardItems = filteredData.filter((item) => item.name !== 'title')
 
   return (
-    <section className={currentBody === 'about' ? 'w-[50%] h-full' : 'hidden'}>
+    <section className='w-[50%] h-full'>
       <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Experticia & Enfoque</h1>
 
       <div className="gap-2.5 py-5 h-full">
@@ -25,14 +26,24 @@ const About = ({ currentBody }) => {
           {cardItems.map((item) => (
             item.label ? (
               <div className="h-full w-full rounded-xl border-2" key={item.id}>
-                <button onClick={() => setTypeCard(item.nextCard)} className="w-full h-full flex items-center justify-center">
-                  <h3 className='text-seccolor text-lg font-bold font-secfont w-32'>{item.label}</h3>
+                <button
+                  onClick={() => setTypeCard(item.nextCard)}
+                  onMouseEnter={() => setGetNumberCard(item.id)}
+                  onMouseLeave={() => setGetNumberCard(0)}
+                  className={`w-full h-full flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out hover:cursor-pointer`}>
+                  <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-lg font-bold font-secfont w-32 transition-all duration-300 ease-in-out`}>
+                    {item.label}
+                  </h3>
                 </button>
               </div>
             ) : (
-              <div className="h-full w-full rounded-xl border-2 border-seccolor/35 p-2.5 flex flex-col justify-center" key={item.id}>
-                <h3 className='text-seccolor text-lg font-bold font-secfont mb-2'>{item.title}</h3>
-                <p className='text-seccolor text-sm font-prifont'>{item.description}</p>
+              <div
+                key={item.id}
+                onMouseEnter={() => setGetNumberCard(item.id)}
+                onMouseLeave={() => setGetNumberCard(0)}
+                className={`${getNumberCard === item.id ? 'border-seccolor shadow-md shadow-seccolor/60' : 'border-seccolor/35'} h-full w-full rounded-xl border-2 p-2.5 flex flex-col justify-center transition-all duration-300 ease-in-out`}>
+                <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-lg font-bold font-secfont mb-2 transition-all duration-300 ease-in-out`}>{item.title}</h3>
+                <p className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-sm font-prifont transition-all duration-300 ease-in-out`}>{item.description}</p>
               </div>
             )
           ))}

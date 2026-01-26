@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+    --color-pricolor: #000000;
+    --color-seccolor: #FFFFFF;
+    --color-tercolor: #200730;
+
+    --font-prifont: "Figtree", sans-serif;
+    --font-secfont: "Montserrat", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url("src/public/assets/svg/bg.svg");
+    margin: 0;
+}
+
+p,
+button,
+a,
+li,
+ul,
+ol {
+    font-family: var(--font-prifont);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secfont);
+}

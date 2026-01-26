@@ -20,19 +20,19 @@ function Index() {
           <img src="src/public/assets/svg/LineVector.svg" t="Line Vector" />
         </div>
         <nav className=' h-full flex gap-10 items-end pr-20'>
-          <button className={`${currentBody === 'cover' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('cover')}>
+          <button className={`${currentBody === 'cover' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('cover')}>
             Portada
           </button>
-          <button className={`${currentBody === 'about' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('about')}>
+          <button className={`${currentBody === 'about' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('about')}>
             Sobre Mi
           </button>
-          <button className={`${currentBody === 'education' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('education')}>
+          <button className={`${currentBody === 'education' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('education')}>
             Educación
           </button>
-          <button className={`${currentBody === 'experience' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('experience')}>
+          <button className={`${currentBody === 'experience' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('experience')}>
             Mi trayectoria
           </button>
-          <button className={`${currentBody === 'contact' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('contact')}>
+          <button className={`${currentBody === 'contact' ? 'text-seccolor font-bold' : 'text-seccolor/65'} hover:text-seccolor hover:cursor-pointer transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('contact')}>
             Contáctame
           </button>
         </nav>
@@ -44,10 +44,10 @@ function Index() {
             currentBody === 'cover' && (
               <motion.section
                 key="cover"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.5 }}
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full'>
@@ -61,10 +61,10 @@ function Index() {
             currentBody === 'about' && (
               <motion.section
                 key="about"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.4 }}
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full'>
@@ -78,10 +78,10 @@ function Index() {
             currentBody === 'education' && (
               <motion.section
                 key="education"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.4 }}
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full'>
@@ -95,10 +95,10 @@ function Index() {
             currentBody === 'contact' && (
               <motion.section
                 key="contact"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.4 }}
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full'>
@@ -112,10 +112,10 @@ function Index() {
             currentBody === 'experience' && (
               <motion.section
                 key="experience"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.4 }}
                 className='h-full w-full flex'
               >
                 <Experience />
@@ -126,10 +126,10 @@ function Index() {
             currentBody === 'goodbye' && (
               <motion.section
                 key="goodbye"
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.4 }}
                 className='h-full w-full flex'
               >
                 <Goodbye setCurrentBody={setCurrentBody} />
@@ -141,12 +141,12 @@ function Index() {
 
       <footer className={currentBody === 'goodbye' ? 'hidden' : 'h-[10%] w-full relative flex justify-start'}>
         <nav className=' h-full flex gap-2.5 items-start pl-20'>
-          <button className={`${currentBody === 'cover' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('cover')}></button>
-          <button className={`${currentBody === 'about' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('about')}></button>
-          <button className={`${currentBody === 'education' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('education')}></button>
-          <button className={`${currentBody === 'experience' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('experience')}></button>
-          <button className={`${currentBody === 'contact' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('contact')}></button>
-          <button className={`${currentBody === 'contact' ? 'border-2 border-seccolor' : 'hidden'} ${currentBody === 'goodbye' ? 'bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-300 ease-in-out`} onClick={() => setCurrentBody('goodbye')}></button>
+          <button className={`${currentBody === 'cover' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('cover')}></button>
+          <button className={`${currentBody === 'about' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('about')}></button>
+          <button className={`${currentBody === 'education' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('education')}></button>
+          <button className={`${currentBody === 'experience' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('experience')}></button>
+          <button className={`${currentBody === 'contact' ? 'border-2 border-seccolor bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 border-seccolor cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('contact')}></button>
+          <button className={`${currentBody === 'contact' ? 'border-2 border-seccolor' : 'hidden'} ${currentBody === 'goodbye' ? 'bg-seccolor h-6 w-6' : 'bg-transparent h-5 w-5 cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('goodbye')}></button>
         </nav>
         <div className="absolute top-2.5 right-0">
           <img src="src/public/assets/svg/LineVector.svg" t="Line Vector" />

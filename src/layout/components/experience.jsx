@@ -43,7 +43,7 @@ const Experience = () => {
   const filteredData = experienceData.filter((item) => item.cards.currentCard === currentCard)
 
   return (
-    <section className='w-full h-full flex-col flex gap-5 lg:gap-2.5 lg:px-20 lg:py-5 overflow-x-hidden'>
+    <section className='w-full h-fit flex-col flex gap-5 overflow-x-hidden lg:gap-2.5 lg:px-20 lg:py-5 lg:h-full'>
       <div className='flex justify-between'>
         <h1 className='text-seccolor text-4xl font-bold font-secfont pt-3'>Experiencia Laboral</h1>
         <div className='hidden lg:flex gap-2'>

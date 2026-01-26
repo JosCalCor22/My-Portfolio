@@ -59,7 +59,7 @@ const About = () => {
                     onMouseEnter={() => setGetNumberCard(item.id)}
                     onMouseLeave={() => setGetNumberCard(0)}
                     className={`w-full h-full flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out hover:cursor-pointer`}>
-                    <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} h-full w-48 text-xl font-bold font-secfont transition-all duration-300 ease-in-out lg:w-32 lg:text-lg`}>
+                    <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} h-full flex items-center w-48 text-xl font-bold font-secfont transition-all duration-300 ease-in-out`}>
                       {item.label}
                     </h3>
                   </button>
@@ -74,8 +74,8 @@ const About = () => {
                   onMouseEnter={() => setGetNumberCard(item.id)}
                   onMouseLeave={() => setGetNumberCard(0)}
                   className={`${getNumberCard === item.id ? 'border-seccolor shadow-md shadow-seccolor/60' : 'border-seccolor/35'} h-full w-full rounded-xl border-2 p-2.5 flex flex-col justify-center transition-all duration-300 ease-in-out`}>
-                  <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-xl font-bold font-secfont mb-2 transition-all duration-300 ease-in-out lg:text-lg`}>{item.title}</h3>
-                  <p className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-lg font-prifont transition-all duration-300 ease-in-out lg:text-sm`}>{item.description}</p>
+                  <h3 className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-xl font-bold font-secfont mb-2 transition-all duration-300 ease-in-out`}>{item.title}</h3>
+                  <p className={`${getNumberCard === item.id ? 'text-seccolor' : 'text-seccolor/65'} text-md font-prifont transition-all duration-300 ease-in-out`}>{item.description}</p>
                 </motion.div>
               )
             ))}

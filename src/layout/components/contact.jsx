@@ -8,13 +8,13 @@ import { ButtonComponent } from '../../ui/button'
 const Contact = () => {
   const [hover, setHover] = useState('')
   return (
-    <div className='w-full lg:w-[50%] h-full overflow-y-hidden'>
+    <div className='w-full lg:w-[50%] h-fit'>
       <h1 className='text-seccolor text-4xl font-bold font-secfont py-3'>Joseth Calderón</h1>
       <h2 className='text-seccolor text-3xl font-bold font-secfont'>UX Engineer & Product Strategist</h2>
       <div className='flex flex-col gap-2.5 py-5'>
         <p className='text-seccolor text-lg font-prifont lg:text-base'>Busco oportunidades donde pueda fusionar la estrategia de producto, el diseño de impacto y la ingeniería frontend. Si buscas a alguien que lidere con empatía y construya con precisión, hablemos.</p>
       </div>
-      <div className="flex flex-col gap-2.5 lg:grid lg:grid-cols-2 lg:grid-rows-3">
+      <div className="flex flex-col gap-2.5 md:grid lg:grid-cols-2 lg:grid-rows-3">
         <div onMouseEnter={() => setHover('whatsapp')} onMouseLeave={() => setHover('')}>
           <ButtonComponent
             whereIs='contact'

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react'
 /* Icons */
 import { IoMdClose } from "react-icons/io";
 
-const BurgerMenu = ({ isOpen, setIsOpen, setCurrentBody }) => {
+const BurgerMenu = ({ isOpen, setIsOpen, setCurrentBody, currentBody }) => {
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -54,23 +54,43 @@ const BurgerMenu = ({ isOpen, setIsOpen, setCurrentBody }) => {
             onClick={() => setIsOpen(false)}
             className="absolute top-5 right-5 text-seccolor"
           >
-            <IoMdClose className="w-8 h-8" />
+            <IoMdClose className="w-10 h-10" />
           </button>
 
           <motion.nav className="flex flex-col gap-8 text-center">
-            <motion.button variants={itemVariants} onClick={() => handleNavigation('cover')} className="text-seccolor text-2xl font-bold font-secfont hover:text-pricolor hover:scale-110 transition-all">
+            <motion.button
+              variants={itemVariants}
+              onClick={() => handleNavigation('cover')}
+              className={`${currentBody === 'cover' ? 'text-seccolor font-bold' : 'text-seccolor/65'} text-2xl hover:cursor-pointer hover:font-bold transition-all duration-500 ease-in-out`}
+            >
               Portada
             </motion.button>
-            <motion.button variants={itemVariants} onClick={() => handleNavigation('about')} className="text-seccolor text-2xl font-bold font-secfont hover:text-pricolor hover:scale-110 transition-all">
+            <motion.button
+              variants={itemVariants}
+              onClick={() => handleNavigation('about')}
+              className={`${currentBody === 'about' ? 'text-seccolor font-bold' : 'text-seccolor/65'} text-2xl hover:cursor-pointer hover:font-bold hover:text-seccolor transition-all duration-500 ease-in-out`}
+            >
               Sobre Mi
             </motion.button>
-            <motion.button variants={itemVariants} onClick={() => handleNavigation('education')} className="text-seccolor text-2xl font-bold font-secfont hover:text-pricolor hover:scale-110 transition-all">
+            <motion.button
+              variants={itemVariants}
+              onClick={() => handleNavigation('education')}
+              className={`${currentBody === 'education' ? 'text-seccolor font-bold' : 'text-seccolor/65'} text-2xl hover:cursor-pointer hover:font-bold hover:text-seccolor transition-all duration-500 ease-in-out`}
+            >
               Educación
             </motion.button>
-            <motion.button variants={itemVariants} onClick={() => handleNavigation('experience')} className="text-seccolor text-2xl font-bold font-secfont hover:text-pricolor hover:scale-110 transition-all">
+            <motion.button
+              variants={itemVariants}
+              onClick={() => handleNavigation('experience')}
+              className={`${currentBody === 'experience' ? 'text-seccolor font-bold' : 'text-seccolor/65'} text-2xl hover:cursor-pointer hover:font-bold hover:text-seccolor transition-all duration-500 ease-in-out`}
+            >
               Mi trayectoria
             </motion.button>
-            <motion.button variants={itemVariants} onClick={() => handleNavigation('contact')} className="text-seccolor text-2xl font-bold font-secfont hover:text-pricolor hover:scale-110 transition-all">
+            <motion.button
+              variants={itemVariants}
+              onClick={() => handleNavigation('contact')}
+              className={`${currentBody === 'contact' ? 'text-seccolor font-bold' : 'text-seccolor/65'} text-2xl hover:cursor-pointer hover:font-bold hover:text-seccolor transition-all duration-500 ease-in-out`}
+            >
               Contáctame
             </motion.button>
           </motion.nav>

@@ -9,8 +9,8 @@ const Goodbye = ({ setCurrentBody }) => {
   return (
     <div className='w-full h-full flex flex-col justify-center items-center gap-4'>
       <h1 className='text-seccolor text-4xl font-bold font-secfont text-center'>Gracias por visualizar mi portafolio</h1>
-      <h2 className='text-seccolor text-xl font-prifont text-center'>Hecho con dedicación, una buena playlist y la convicción de que la tecnología debe ser, ante todo, humana.</h2>
-      <div className='flex flex-col gap-2.5'>
+      <h2 className='text-seccolor text-xl font-prifont md:text-2xl text-center'>Hecho con dedicación, una buena playlist y la convicción de que la tecnología debe ser, ante todo, humana.</h2>
+      <div className='flex flex-col gap-2.5 md:flex-row'>
         <div onMouseEnter={() => setHover('home')} onMouseLeave={() => setHover('')}>
           <ButtonComponent
             whereIs='goodbye'

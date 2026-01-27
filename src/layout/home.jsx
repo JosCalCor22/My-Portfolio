@@ -24,7 +24,7 @@ function Index() {
       {/* Header */}
       <header className={currentBody === 'goodbye' ? 'hidden' : 'h-[10%] w-full flex justify-end items-end p-5 mx-auto lg:justify-between'}>
         <div className="hidden pb-2.5 lg:block lg:w-[35%]">
-          <img src="src/public/assets/svg/LineVector.svg" alt="Line Vector" />
+          <img src="/svg/LineVector.svg" alt="Line Vector" />
         </div>
         <button onClick={() => setIsOpen(true)} className="lg:hidden text-seccolor h-full flex items-end">
           <IoMdMenu className="w-10 h-10" />
@@ -62,7 +62,7 @@ function Index() {
                 className='h-full w-full flex flex-col gap-2.5 lg:flex-row'
               >
                 <div className='w-full h-full hidden md:flex lg:w-[50%]'>
-                  <img src="src/public/assets/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
+                  <img src="/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
                 </div>
                 <Cover />
               </motion.section>
@@ -79,7 +79,7 @@ function Index() {
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full hidden lg:block'>
-                  <img src="src/public/assets/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
+                  <img src="/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
                 </div>
                 <About />
               </motion.section>
@@ -96,7 +96,7 @@ function Index() {
                 className='h-full w-full flex gap-2.5'
               >
                 <div className='w-[50%] h-full hidden lg:block'>
-                  <img src="src/public/assets/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
+                  <img src="/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
                 </div>
                 <Education />
               </motion.section>
@@ -113,7 +113,7 @@ function Index() {
                 className='h-full w-full flex flex-col gap-2.5 lg:flex-row'
               >
                 <div className='w-full h-full hidden md:flex lg:w-[50%]'>
-                  <img src="src/public/assets/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
+                  <img src="/images/Photo_Profile.png" className='h-full object-cover' alt="Profile" />
                 </div>
                 <Contact />
               </motion.section>
@@ -161,7 +161,7 @@ function Index() {
           <button className={`${currentBody === 'contact' ? 'border-2 border-seccolor' : 'hidden'} ${currentBody === 'goodbye' ? 'bg-seccolor lg:h-6 lg:w-6 h-7 w-7' : 'bg-transparent h-5 w-5 cursor-pointer'} rounded-full border-2 hover:bg-seccolor transition-all duration-500 ease-in-out`} onClick={() => setCurrentBody('goodbye')}></button>
         </nav>
         <div className="hidden pt-2.5 lg:block">
-          <img src="src/public/assets/svg/LineVector.svg" t="Line Vector" />
+          <img src="/svg/LineVector.svg" t="Line Vector" />
         </div>
       </footer>
     </section>

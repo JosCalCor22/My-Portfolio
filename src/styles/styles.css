@@ -17,7 +17,7 @@ body {
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-image: url("src/public/assets/svg/bg.svg");
+    background-image: url("/svg/bg.svg");
     margin: 0;
 }
 

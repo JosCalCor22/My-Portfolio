@@ -54,7 +54,8 @@ const ButtonComponent = ({ text, onClick, whereIs, isRotated, isHover, isRespons
                 <div className='flex gap-2.5'>
                   <LuFile className={`${isHover === 'cv' ? 'text-pricolor' : 'text-seccolor'} w-6 h-6 transition-all duration-300 ease-in-out`} />
                   <span className={`${isHover === 'cv' ? 'text-pricolor font-bold' : 'text-seccolor font-light'} text-base transition-all duration-300 ease-in-out`}>
-                    <Link to={'https://drive.google.com/file/d/122_u_LNXV7tG4D0-t6Xd0r_A5bpkLOrn/view?usp=sharing'} target='_blank'>Visualiza mi CV</Link>
+                    {/* <Link to={'https://drive.google.com/file/d/122_u_LNXV7tG4D0-t6Xd0r_A5bpkLOrn/view?usp=sharing'} target='_blank'>Visualiza mi CV</Link> */}
+                    <span>Visualiza mi CV</span>
                   </span>
                 </div>
               ) : null

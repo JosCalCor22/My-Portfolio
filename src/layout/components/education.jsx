@@ -1,49 +1,30 @@
 import { motion } from "motion/react";
-import {
-  LuAward,
-  LuGraduationCap,
-  LuCheck,
-  LuCalendar,
-  LuSparkles,
-} from "react-icons/lu";
+import { LuAward, LuCalendar } from "react-icons/lu";
 import { iconConfigMap } from "../../ui/TechIcon";
 
 const Education = ({ data }) => {
   return (
-    <div className="w-full space-y-16">
-      {/* PART 1: HONORS & AWARDS (3x International Web3 Hackathon Winner) */}
-      <div className="space-y-8">
-        <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">
-            {data.awards.sectionTag}
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            {data.awards.sectionTitle}
-          </h2>
-        </div>
-
-        {/* Trophy Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-amber-500/10 via-cyan-500/10 to-indigo-500/10 border border-amber-500/30 p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
-            <div className="p-4 rounded-2xl bg-amber-500/15 border border-amber-500/40 text-amber-400 shrink-0">
-              <LuAward className="w-8 h-8" />
-            </div>
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">
-                <LuSparkles className="w-3.5 h-3.5" />
-                <span>GLOBAL WEB3 RECOGNITION</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-                {data.awards.bannerTitle}
-              </h3>
-              <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                {data.awards.bannerSubtitle}
-              </p>
-            </div>
+    <div className="w-full space-y-20">
+      {/* PART 1: HONORS & AWARDS (05 Index — Title Only, no description) */}
+      <div className="space-y-10">
+        <div className="flex items-start gap-6 border-b border-white/10 pb-6">
+          <div className="hidden sm:flex flex-col items-center pt-1">
+            <span className="text-4xl font-black tracking-tighter text-white leading-none">
+              05
+            </span>
+            <span className="w-8 h-[3px] bg-[#7C3AED] mt-2" />
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-xs uppercase tracking-[0.25em] text-[#A78BFA] font-semibold">
+              {data.awards.sectionTag}
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              {data.awards.sectionTitle}
+            </h2>
           </div>
         </div>
 
-        {/* 3x Hackathon Cards (Solana, Chainlink, Filecoin) */}
+        {/* 3x Hackathon Architectural Grid (Solana, Chainlink, Filecoin) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {data.awards.items.map((award, idx) => {
             const cfg = iconConfigMap[award.iconKey] || iconConfigMap.solana;
@@ -52,40 +33,45 @@ const Education = ({ data }) => {
             return (
               <motion.div
                 key={award.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: idx * 0.1 }}
-                className="rounded-2xl bg-slate-900/85 border border-slate-800 hover:border-cyan-500/40 p-6 flex flex-col justify-between gap-4 transition-all duration-300 shadow-lg"
+                transition={{ duration: 0.35, delay: idx * 0.08 }}
+                className={`group bg-[#0B0B0F] hover:bg-[#111117] border border-white/10 ${cfg.hoverBorder} p-7 sm:p-9 flex flex-col justify-between gap-6 transition-all duration-300`}
               >
-                <div className="space-y-4">
+                <div className="space-y-5">
                   <div className="flex items-center justify-between">
                     <div
-                      className={`p-3.5 rounded-xl border ${cfg.bg} ${cfg.border} ${cfg.color}`}
+                      className={`p-3.5 bg-[#121218] border border-white/10 ${cfg.hoverBoxBorder} transition-colors duration-300`}
                     >
-                      <AwardIcon className="w-6 h-6" />
+                      <AwardIcon
+                        className={`w-6 h-6 text-white ${cfg.hoverIcon} transition-colors duration-300`}
+                      />
                     </div>
-                    <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 font-semibold">
-                      Winner
+                    <span className="text-[11px] uppercase tracking-[0.2em] px-3 py-1 bg-[#121218] border border-white/15 text-zinc-300 group-hover:text-white font-bold transition-colors">
+                      0{idx + 1} • WINNER
                     </span>
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-extrabold text-white">
+                    <h3 className="text-xl font-black text-white tracking-tight">
                       {award.title}
-                    </h4>
-                    <p className="text-xs font-mono text-cyan-400 mt-0.5">
-                      {award.organization} Ecosystem
+                    </h3>
+                    <p className="text-xs uppercase tracking-wider text-[#A78BFA] mt-1 font-semibold">
+                      {award.organization} Global Competition
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {award.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">
-                  {award.highlight}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-500">
+                  <span>{award.highlight}</span>
+                  <LuAward
+                    className={`w-4 h-4 text-white ${cfg.hoverIcon} transition-colors duration-300`}
+                  />
                 </div>
               </motion.div>
             );
@@ -93,83 +79,85 @@ const Education = ({ data }) => {
         </div>
       </div>
 
-      {/* PART 2: EDUCATION & EXECUTIVE TRAINING */}
-      <div className="space-y-8">
-        <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">
+      {/* PART 2: ACADEMIC & EXECUTIVE CREDENTIALS (Title Only, no description) */}
+      <div className="space-y-10">
+        <div className="border-b border-white/10 pb-6 space-y-1.5">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#A78BFA] font-semibold">
             {data.education.sectionTag}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
             {data.education.sectionTitle}
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            {data.education.sectionSubtitle}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {data.education.items.map((item, idx) => {
             const cfg = iconConfigMap[item.iconKey] || {
-              Icon: LuGraduationCap,
-              color: "text-cyan-400",
-              bg: "bg-cyan-500/15",
-              border: "border-cyan-500/35",
+              Icon: null,
+              hoverBorder: "hover:border-[#7C3AED]",
             };
             const EdIcon = cfg.Icon;
 
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.08 }}
-                className="rounded-3xl bg-slate-900/85 border border-slate-800 hover:border-cyan-500/40 p-6 sm:p-7 flex flex-col justify-between gap-5 transition-all duration-300 shadow-lg"
+                className={`group bg-[#0B0B0F] hover:bg-[#111117] border border-white/10 ${cfg.hoverBorder} p-7 sm:p-9 flex flex-col justify-between gap-6 transition-all duration-300`}
               >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`p-3.5 rounded-xl border ${cfg.bg} ${cfg.border} ${cfg.color} shrink-0`}
-                      >
-                        <EdIcon className="w-6 h-6" />
-                      </div>
+                <div className="space-y-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      {/* Render icon ONLY when official identity icon exists (Google, Platzi) */}
+                      {EdIcon && (
+                        <div
+                          className={`p-3.5 bg-[#121218] border border-white/10 ${cfg.hoverBoxBorder} shrink-0 mt-0.5 transition-colors duration-300`}
+                        >
+                          <EdIcon
+                            className={`w-6 h-6 text-white ${cfg.hoverIcon} transition-colors duration-300`}
+                          />
+                        </div>
+                      )}
                       <div>
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-semibold">
-                          {item.type}
+                        <span className="text-[11px] uppercase tracking-[0.22em] text-[#A78BFA] font-semibold">
+                          0{idx + 1} — {item.type}
                         </span>
-                        <h3 className="text-lg sm:text-xl font-extrabold text-white leading-snug">
+                        <h3 className="text-lg sm:text-xl font-black text-white leading-snug mt-1">
                           {item.title}
                         </h3>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium text-slate-300 bg-slate-950/60 border border-slate-800/80 px-3.5 py-2 rounded-xl">
-                    <span className="font-bold text-white">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs bg-[#08080B] border border-white/[0.08] px-4 py-2.5">
+                    <span className="font-bold text-white uppercase tracking-wider">
                       {item.institution}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 font-mono text-cyan-400">
+                    <span className="inline-flex items-center gap-1.5 text-[#A78BFA] font-medium">
                       <LuCalendar className="w-3.5 h-3.5" />
                       {item.duration}
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     {item.description}
                   </p>
 
-                  <ul className="space-y-2 pt-1">
+                  <div className="space-y-2 pt-2 border-t border-white/10">
                     {item.highlights.map((h, i) => (
-                      <li
+                      <div
                         key={i}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
+                        className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300"
                       >
-                        <LuCheck className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <span className="font-editorial italic text-base text-[#A78BFA] leading-none mt-0.5">
+                          /
+                        </span>
                         <span>{h}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </motion.div>
             );

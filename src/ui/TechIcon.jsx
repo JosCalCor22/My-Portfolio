@@ -20,13 +20,10 @@ import {
 } from "react-icons/si";
 import {
   LuShieldCheck,
-  LuLock,
-  LuRadar,
   LuFileKey,
   LuFileCheck,
   LuBriefcase,
   LuRocket,
-  LuCompass,
   LuKanban,
   LuCrown,
   LuGlobe,
@@ -34,12 +31,10 @@ import {
   LuSparkles,
   LuBrainCircuit,
   LuLayers,
-  LuAward,
-  LuGraduationCap,
   LuCode,
+  LuRadar,
 } from "react-icons/lu";
 
-/* Custom crisp SVGs for Solana, Filecoin, and Gemini/LangChain where needed */
 const SolanaSvg = ({ className }) => (
   <svg viewBox="0 0 397.7 311.7" fill="currentColor" className={className}>
     <path d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7z" />
@@ -55,41 +50,216 @@ const FilecoinSvg = ({ className }) => (
 );
 
 export const iconConfigMap = {
-  typescript: { Icon: SiTypescript, color: "text-[#3178C6]", bg: "bg-[#3178C6]/15", border: "border-[#3178C6]/35" },
-  javascript: { Icon: SiJavascript, color: "text-[#F7DF1E]", bg: "bg-[#F7DF1E]/15", border: "border-[#F7DF1E]/35" },
-  react: { Icon: SiReact, color: "text-[#61DAFB]", bg: "bg-[#61DAFB]/15", border: "border-[#61DAFB]/35" },
-  python: { Icon: SiPython, color: "text-[#3776AB]", bg: "bg-[#3776AB]/15", border: "border-[#3776AB]/40" },
-  fastapi: { Icon: SiFastapi, color: "text-[#009688]", bg: "bg-[#009688]/15", border: "border-[#009688]/35" },
-  tailwind: { Icon: SiTailwindcss, color: "text-[#38BDF8]", bg: "bg-[#38BDF8]/15", border: "border-[#38BDF8]/35" },
-  postgresql: { Icon: SiPostgresql, color: "text-[#60A5FA]", bg: "bg-[#60A5FA]/15", border: "border-[#60A5FA]/35" },
-  sql: { Icon: LuDatabase, color: "text-cyan-400", bg: "bg-cyan-500/15", border: "border-cyan-500/35" },
-  langchain: { Icon: LuBrainCircuit, color: "text-purple-400", bg: "bg-purple-500/15", border: "border-purple-500/35" },
-  sqlalchemy: { Icon: SiSqlalchemy, color: "text-red-400", bg: "bg-red-500/15", border: "border-red-500/35" },
-  alembic: { Icon: LuLayers, color: "text-amber-400", bg: "bg-amber-500/15", border: "border-amber-500/35" },
-  docker: { Icon: SiDocker, color: "text-[#2496ED]", bg: "bg-[#2496ED]/15", border: "border-[#2496ED]/35" },
-  gcp: { Icon: SiGooglecloud, color: "text-[#4285F4]", bg: "bg-[#4285F4]/15", border: "border-[#4285F4]/35" },
-  git: { Icon: SiGit, color: "text-[#F05032]", bg: "bg-[#F05032]/15", border: "border-[#F05032]/35" },
-  github: { Icon: SiGithub, color: "text-slate-200", bg: "bg-slate-500/20", border: "border-slate-400/35" },
-  cicd: { Icon: LuRocket, color: "text-emerald-400", bg: "bg-emerald-500/15", border: "border-emerald-500/35" },
-  figma: { Icon: SiFigma, color: "text-[#F24E1E]", bg: "bg-[#F24E1E]/15", border: "border-[#F24E1E]/35" },
-  notion: { Icon: SiNotion, color: "text-white", bg: "bg-white/10", border: "border-white/30" },
-  nist: { Icon: LuShieldCheck, color: "text-emerald-400", bg: "bg-emerald-500/15", border: "border-emerald-500/35" },
-  jwt: { Icon: SiJsonwebtokens, color: "text-pink-400", bg: "bg-pink-500/15", border: "border-pink-500/35" },
-  encryption: { Icon: LuFileKey, color: "text-teal-400", bg: "bg-teal-500/15", border: "border-teal-500/35" },
-  siem: { Icon: LuRadar, color: "text-sky-400", bg: "bg-sky-500/15", border: "border-sky-500/35" },
-  audit: { Icon: LuFileCheck, color: "text-indigo-400", bg: "bg-indigo-500/15", border: "border-indigo-500/35" },
-  product: { Icon: LuBriefcase, color: "text-blue-400", bg: "bg-blue-500/15", border: "border-blue-500/35" },
-  leadership: { Icon: LuCrown, color: "text-amber-400", bg: "bg-amber-500/15", border: "border-amber-500/35" },
-  agile: { Icon: LuKanban, color: "text-cyan-400", bg: "bg-cyan-500/15", border: "border-cyan-500/35" },
-  language: { Icon: LuGlobe, color: "text-blue-400", bg: "bg-blue-500/15", border: "border-blue-500/35" },
-  languageEs: { Icon: LuGlobe, color: "text-emerald-400", bg: "bg-emerald-500/15", border: "border-emerald-500/35" },
-  solana: { Icon: SolanaSvg, color: "text-[#14F195]", bg: "bg-[#14F195]/15", border: "border-[#14F195]/35" },
-  chainlink: { Icon: SiChainlink, color: "text-[#375BD2]", bg: "bg-[#375BD2]/20", border: "border-[#375BD2]/45" },
-  filecoin: { Icon: FilecoinSvg, color: "text-[#0090FF]", bg: "bg-[#0090FF]/15", border: "border-[#0090FF]/35" },
-  google: { Icon: SiGoogle, color: "text-[#4285F4]", bg: "bg-[#4285F4]/15", border: "border-[#4285F4]/35" },
-  uniandes: { Icon: LuAward, color: "text-amber-400", bg: "bg-amber-500/15", border: "border-amber-500/35" },
-  sena: { Icon: LuGraduationCap, color: "text-emerald-400", bg: "bg-emerald-500/15", border: "border-emerald-500/35" },
-  platzi: { Icon: SiPlatzi, color: "text-[#98CA3F]", bg: "bg-[#98CA3F]/15", border: "border-[#98CA3F]/35" },
+  typescript: {
+    Icon: SiTypescript,
+    hoverIcon: "group-hover:text-[#3178C6]",
+    hoverBorder: "hover:border-[#3178C6]",
+    hoverBoxBorder: "group-hover:border-[#3178C6]/50",
+  },
+  javascript: {
+    Icon: SiJavascript,
+    hoverIcon: "group-hover:text-[#F7DF1E]",
+    hoverBorder: "hover:border-[#F7DF1E]",
+    hoverBoxBorder: "group-hover:border-[#F7DF1E]/50",
+  },
+  react: {
+    Icon: SiReact,
+    hoverIcon: "group-hover:text-[#61DAFB]",
+    hoverBorder: "hover:border-[#61DAFB]",
+    hoverBoxBorder: "group-hover:border-[#61DAFB]/50",
+  },
+  python: {
+    Icon: SiPython,
+    hoverIcon: "group-hover:text-[#3776AB]",
+    hoverBorder: "hover:border-[#3776AB]",
+    hoverBoxBorder: "group-hover:border-[#3776AB]/50",
+  },
+  fastapi: {
+    Icon: SiFastapi,
+    hoverIcon: "group-hover:text-[#009688]",
+    hoverBorder: "hover:border-[#009688]",
+    hoverBoxBorder: "group-hover:border-[#009688]/50",
+  },
+  tailwind: {
+    Icon: SiTailwindcss,
+    hoverIcon: "group-hover:text-[#38BDF8]",
+    hoverBorder: "hover:border-[#38BDF8]",
+    hoverBoxBorder: "group-hover:border-[#38BDF8]/50",
+  },
+  postgresql: {
+    Icon: SiPostgresql,
+    hoverIcon: "group-hover:text-[#60A5FA]",
+    hoverBorder: "hover:border-[#60A5FA]",
+    hoverBoxBorder: "group-hover:border-[#60A5FA]/50",
+  },
+  sql: {
+    Icon: LuDatabase,
+    hoverIcon: "group-hover:text-[#38BDF8]",
+    hoverBorder: "hover:border-[#38BDF8]",
+    hoverBoxBorder: "group-hover:border-[#38BDF8]/50",
+  },
+  langchain: {
+    Icon: LuBrainCircuit,
+    hoverIcon: "group-hover:text-[#A855F7]",
+    hoverBorder: "hover:border-[#A855F7]",
+    hoverBoxBorder: "group-hover:border-[#A855F7]/50",
+  },
+  sqlalchemy: {
+    Icon: SiSqlalchemy,
+    hoverIcon: "group-hover:text-[#EF4444]",
+    hoverBorder: "hover:border-[#EF4444]",
+    hoverBoxBorder: "group-hover:border-[#EF4444]/50",
+  },
+  alembic: {
+    Icon: LuLayers,
+    hoverIcon: "group-hover:text-[#F59E0B]",
+    hoverBorder: "hover:border-[#F59E0B]",
+    hoverBoxBorder: "group-hover:border-[#F59E0B]/50",
+  },
+  docker: {
+    Icon: SiDocker,
+    hoverIcon: "group-hover:text-[#2496ED]",
+    hoverBorder: "hover:border-[#2496ED]",
+    hoverBoxBorder: "group-hover:border-[#2496ED]/50",
+  },
+  gcp: {
+    Icon: SiGooglecloud,
+    hoverIcon: "group-hover:text-[#4285F4]",
+    hoverBorder: "hover:border-[#4285F4]",
+    hoverBoxBorder: "group-hover:border-[#4285F4]/50",
+  },
+  git: {
+    Icon: SiGit,
+    hoverIcon: "group-hover:text-[#F05032]",
+    hoverBorder: "hover:border-[#F05032]",
+    hoverBoxBorder: "group-hover:border-[#F05032]/50",
+  },
+  github: {
+    Icon: SiGithub,
+    hoverIcon: "group-hover:text-[#A855F7]",
+    hoverBorder: "hover:border-[#A855F7]",
+    hoverBoxBorder: "group-hover:border-[#A855F7]/50",
+  },
+  cicd: {
+    Icon: LuRocket,
+    hoverIcon: "group-hover:text-[#10B981]",
+    hoverBorder: "hover:border-[#10B981]",
+    hoverBoxBorder: "group-hover:border-[#10B981]/50",
+  },
+  figma: {
+    Icon: SiFigma,
+    hoverIcon: "group-hover:text-[#F24E1E]",
+    hoverBorder: "hover:border-[#F24E1E]",
+    hoverBoxBorder: "group-hover:border-[#F24E1E]/50",
+  },
+  notion: {
+    Icon: SiNotion,
+    hoverIcon: "group-hover:text-[#A855F7]",
+    hoverBorder: "hover:border-[#A855F7]",
+    hoverBoxBorder: "group-hover:border-[#A855F7]/50",
+  },
+  nist: {
+    Icon: LuShieldCheck,
+    hoverIcon: "group-hover:text-[#10B981]",
+    hoverBorder: "hover:border-[#10B981]",
+    hoverBoxBorder: "group-hover:border-[#10B981]/50",
+  },
+  jwt: {
+    Icon: SiJsonwebtokens,
+    hoverIcon: "group-hover:text-[#EC4899]",
+    hoverBorder: "hover:border-[#EC4899]",
+    hoverBoxBorder: "group-hover:border-[#EC4899]/50",
+  },
+  encryption: {
+    Icon: LuFileKey,
+    hoverIcon: "group-hover:text-[#14B8A6]",
+    hoverBorder: "hover:border-[#14B8A6]",
+    hoverBoxBorder: "group-hover:border-[#14B8A6]/50",
+  },
+  siem: {
+    Icon: LuRadar,
+    hoverIcon: "group-hover:text-[#38BDF8]",
+    hoverBorder: "hover:border-[#38BDF8]",
+    hoverBoxBorder: "group-hover:border-[#38BDF8]/50",
+  },
+  audit: {
+    Icon: LuFileCheck,
+    hoverIcon: "group-hover:text-[#8B5CF6]",
+    hoverBorder: "hover:border-[#8B5CF6]",
+    hoverBoxBorder: "group-hover:border-[#8B5CF6]/50",
+  },
+  product: {
+    Icon: LuBriefcase,
+    hoverIcon: "group-hover:text-[#8B5CF6]",
+    hoverBorder: "hover:border-[#8B5CF6]",
+    hoverBoxBorder: "group-hover:border-[#8B5CF6]/50",
+  },
+  leadership: {
+    Icon: LuCrown,
+    hoverIcon: "group-hover:text-[#A855F7]",
+    hoverBorder: "hover:border-[#A855F7]",
+    hoverBoxBorder: "group-hover:border-[#A855F7]/50",
+  },
+  agile: {
+    Icon: LuKanban,
+    hoverIcon: "group-hover:text-[#38BDF8]",
+    hoverBorder: "hover:border-[#38BDF8]",
+    hoverBoxBorder: "group-hover:border-[#38BDF8]/50",
+  },
+  language: {
+    Icon: LuGlobe,
+    hoverIcon: "group-hover:text-[#60A5FA]",
+    hoverBorder: "hover:border-[#60A5FA]",
+    hoverBoxBorder: "group-hover:border-[#60A5FA]/50",
+  },
+  languageEs: {
+    Icon: LuGlobe,
+    hoverIcon: "group-hover:text-[#10B981]",
+    hoverBorder: "hover:border-[#10B981]",
+    hoverBoxBorder: "group-hover:border-[#10B981]/50",
+  },
+  solana: {
+    Icon: SolanaSvg,
+    hoverIcon: "group-hover:text-[#14F195]",
+    hoverBorder: "hover:border-[#14F195]",
+    hoverBoxBorder: "group-hover:border-[#14F195]/50",
+  },
+  chainlink: {
+    Icon: SiChainlink,
+    hoverIcon: "group-hover:text-[#375BD2]",
+    hoverBorder: "hover:border-[#375BD2]",
+    hoverBoxBorder: "group-hover:border-[#375BD2]/50",
+  },
+  filecoin: {
+    Icon: FilecoinSvg,
+    hoverIcon: "group-hover:text-[#0090FF]",
+    hoverBorder: "hover:border-[#0090FF]",
+    hoverBoxBorder: "group-hover:border-[#0090FF]/50",
+  },
+  google: {
+    Icon: SiGoogle,
+    isOfficial: true,
+    hoverIcon: "group-hover:text-[#4285F4]",
+    hoverBorder: "hover:border-[#4285F4]",
+    hoverBoxBorder: "group-hover:border-[#4285F4]/50",
+  },
+  platzi: {
+    Icon: SiPlatzi,
+    isOfficial: true,
+    hoverIcon: "group-hover:text-[#98CA3F]",
+    hoverBorder: "hover:border-[#98CA3F]",
+    hoverBoxBorder: "group-hover:border-[#98CA3F]/50",
+  },
+  uniandes: {
+    Icon: null,
+    isOfficial: false,
+    hoverBorder: "hover:border-[#FACC15]",
+  },
+  sena: {
+    Icon: null,
+    isOfficial: false,
+    hoverBorder: "hover:border-[#FF6B00]",
+  },
 };
 
 const tagToKeyMap = {
@@ -118,34 +288,24 @@ const tagToKeyMap = {
   "no-code": "agile",
 };
 
-export const TechIcon = ({ iconKey, tag, size = "w-5 h-5" }) => {
-  const normalizedKey =
-    iconKey || (tag ? tagToKeyMap[tag.toLowerCase()] : null) || "default";
-  const cfg = iconConfigMap[normalizedKey] || {
-    Icon: LuCode,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/15",
-    border: "border-cyan-500/35",
-  };
-  const { Icon, color } = cfg;
-  return <Icon className={`${size} ${color} shrink-0`} />;
-};
-
 export const TechBadge = ({ label, iconKey }) => {
   const normalizedKey =
     iconKey || (label ? tagToKeyMap[label.toLowerCase()] : null);
   const cfg = iconConfigMap[normalizedKey] || {
     Icon: LuSparkles,
-    color: "text-cyan-400",
-    bg: "bg-slate-800/80",
-    border: "border-slate-700",
+    hoverIcon: "group-hover:text-[#8B5CF6]",
+    hoverBorder: "hover:border-[#8B5CF6]",
   };
-  const { Icon, color } = cfg;
+  const Icon = cfg.Icon || LuCode;
 
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-800/90 transition-all duration-200 shadow-xs">
-      <Icon className={`w-3.5 h-3.5 ${color} shrink-0`} />
-      <span>{label}</span>
+    <span
+      className={`group inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium bg-[#0E0E12] border border-white/10 ${cfg.hoverBorder} text-zinc-300 hover:text-white transition-all duration-200`}
+    >
+      <Icon
+        className={`w-3.5 h-3.5 text-white ${cfg.hoverIcon} transition-colors duration-200 shrink-0`}
+      />
+      <span className="tracking-wide">{label}</span>
     </span>
   );
 };

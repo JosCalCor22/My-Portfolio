@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "motion/react";
+import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { IoMdMenu } from "react-icons/io";
-import { LuGlobe, LuFileText, LuCalendar } from "react-icons/lu";
+import { LuFileText, LuCalendar, LuChevronDown } from "react-icons/lu";
 
 /* Data */
 import { portfolioData, externalLinks } from "../scripts/portfolioData";
@@ -27,6 +27,8 @@ function Index() {
   const [activeSection, setActiveSection] = useState("overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const submenuRef = useRef(null);
 
   const data = portfolioData[lang] || portfolioData.es;
 
@@ -39,6 +41,16 @@ function Index() {
     document.title = data.meta.title;
     document.documentElement.lang = lang;
   }, [lang, data.meta.title]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (submenuRef.current && !submenuRef.current.contains(e.target)) {
+        setIsSubmenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const sectionIds = [
@@ -69,31 +81,31 @@ function Index() {
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
+    setIsSubmenuOpen(false);
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  const navItems = [
+  const primaryNavItems = [
     { id: "overview", label: data.nav.overview },
     { id: "leadership", label: data.nav.leadership },
     { id: "experience", label: data.nav.experience },
-    { id: "skills", label: data.nav.skills },
-    { id: "education", label: data.nav.education },
-    { id: "contact", label: data.nav.contact },
   ];
 
-  return (
-    <div className="min-h-screen w-full bg-[#060913] text-slate-100 relative selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
-      {/* Subtle Corporate-Tech Ambient Lighting & Architectural Grid */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/4 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[130px]" />
-        <div className="absolute top-1/3 -right-32 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-indigo-600/10 rounded-full blur-[130px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b18_1px,transparent_1px),linear-gradient(to_bottom,#1e293b18_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-      </div>
+  const submenuItems = [
+    { id: "skills", num: "04", label: data.nav.skills },
+    { id: "education", num: "05", label: data.nav.education },
+    { id: "contact", num: "06", label: data.nav.contact },
+  ];
 
+  const isSubmenuSectionActive = ["skills", "education", "contact"].includes(
+    activeSection
+  );
+
+  return (
+    <div className="min-h-screen w-full bg-[#070709] text-zinc-100 relative selection:bg-[#7C3AED] selection:text-white overflow-x-hidden">
       {/* Mobile Navigation Drawer */}
       <BurgerMenu
         isOpen={isMobileMenuOpen}
@@ -106,72 +118,140 @@ function Index() {
         onOpenCv={() => setIsCvModalOpen(true)}
       />
 
-      {/* Sticky Executive Command Header */}
-      <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-slate-950/80 border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-          {/* Brand Identity */}
+      {/* Sticky Header with Spacious Layout & Submenu */}
+      <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#070709]/90 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+          {/* Brand Name (Removed white rectangle icon) */}
           <button
             onClick={() => scrollToSection("overview")}
-            className="flex items-center gap-3 text-left group cursor-pointer"
+            className="text-left group cursor-pointer shrink-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-slate-950 font-extrabold text-sm shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              JC
-            </div>
-            <div>
-              <span className="block text-white font-extrabold text-sm sm:text-base tracking-tight">
-                Joseth Calderón
-              </span>
-              <span className="block text-[11px] font-mono text-cyan-400">
-                Product & Full-Stack Leader
-              </span>
-            </div>
+            <span className="block text-white font-black text-sm sm:text-base uppercase tracking-[0.22em] group-hover:text-[#A78BFA] transition-colors whitespace-nowrap">
+              Joseth Calderón
+            </span>
+            <span className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 whitespace-nowrap">
+              Product & Tech Leader
+            </span>
           </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1 bg-slate-900/70 border border-slate-800/90 rounded-xl p-1">
-            {navItems.map((item) => {
+          {/* Desktop Navigation with Submenu Dropdown */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {primaryNavItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`relative py-2 text-xs uppercase tracking-[0.18em] font-bold whitespace-nowrap transition-colors duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-slate-800 text-cyan-400 shadow-xs"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                      ? "text-white"
+                      : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   {item.label}
+                  {isActive && (
+                    <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-[#7C3AED]" />
+                  )}
                 </button>
               );
             })}
+
+            {/* Submenu Dropdown Trigger */}
+            <div className="relative" ref={submenuRef}>
+              <button
+                onClick={() => setIsSubmenuOpen((prev) => !prev)}
+                className={`relative py-2 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] font-bold whitespace-nowrap transition-colors duration-200 cursor-pointer ${
+                  isSubmenuSectionActive || isSubmenuOpen
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+              >
+                <span>{lang === "es" ? "Más Secciones" : "Explore More"}</span>
+                <LuChevronDown
+                  className={`w-4 h-4 text-[#A78BFA] transition-transform duration-200 ${
+                    isSubmenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+                {isSubmenuSectionActive && (
+                  <span className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-[#7C3AED]" />
+                )}
+              </button>
+
+              <AnimatePresence>
+                {isSubmenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute right-0 mt-3 w-64 bg-[#0B0B0F] border border-white/15 shadow-2xl divide-y divide-white/10 z-50"
+                  >
+                    <div className="py-1">
+                      {submenuItems.map((sub) => {
+                        const isSubActive = activeSection === sub.id;
+                        return (
+                          <button
+                            key={sub.id}
+                            onClick={() => scrollToSection(sub.id)}
+                            className={`w-full px-5 py-3.5 text-left flex items-center justify-between text-xs uppercase tracking-[0.16em] font-bold transition-colors cursor-pointer ${
+                              isSubActive
+                                ? "bg-[#6D28D9]/25 text-[#A78BFA]"
+                                : "text-zinc-300 hover:bg-[#121218] hover:text-white"
+                            }`}
+                          >
+                            <span>{sub.label}</span>
+                            <span className="text-[10px] text-zinc-500">
+                              {sub.num}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    <div className="p-2 bg-[#08080B]">
+                      <button
+                        onClick={() => {
+                          setIsSubmenuOpen(false);
+                          setIsCvModalOpen(true);
+                        }}
+                        className="w-full px-4 py-3 bg-[#121218] hover:bg-[#6D28D9] text-white text-xs uppercase tracking-[0.16em] font-bold flex items-center justify-between transition-colors cursor-pointer"
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          <LuFileText className="w-3.5 h-3.5 text-[#A78BFA]" />
+                          {data.nav.viewCv} (ES / EN)
+                        </span>
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Right Controls: Language Switcher (ES / EN) + CV + Book Call */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3 shrink-0">
             {/* Bilingual Language Toggle */}
             <div
-              className="flex items-center bg-slate-900 border border-slate-700/90 rounded-xl p-1"
+              className="flex items-center bg-[#121218] border border-white/15 p-0.5"
               role="group"
               aria-label="Language selector"
             >
-              <LuGlobe className="w-3.5 h-3.5 text-cyan-400 ml-2 mr-1 hidden sm:block" />
               <button
                 onClick={() => setLang("es")}
-                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   lang === "es"
-                    ? "bg-cyan-500 text-slate-950 shadow-xs"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#6D28D9] text-white"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 ES
               </button>
               <button
                 onClick={() => setLang("en")}
-                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   lang === "en"
-                    ? "bg-cyan-500 text-slate-950 shadow-xs"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#6D28D9] text-white"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 EN
@@ -181,9 +261,9 @@ function Index() {
             {/* Interactive CV Button */}
             <button
               onClick={() => setIsCvModalOpen(true)}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white text-xs font-semibold border border-slate-700 hover:border-cyan-500/50 transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-transparent hover:bg-white/5 text-white text-[11px] font-bold uppercase tracking-[0.16em] border border-white/20 hover:border-[#7C3AED] whitespace-nowrap transition-all cursor-pointer"
             >
-              <LuFileText className="w-3.5 h-3.5 text-cyan-400" />
+              <LuFileText className="w-3.5 h-3.5 text-[#A78BFA]" />
               <span>{data.nav.viewCv}</span>
             </button>
 
@@ -192,7 +272,7 @@ function Index() {
               href={externalLinks.calendar}
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs shadow-md shadow-cyan-500/15 transition-all"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-[11px] uppercase tracking-[0.16em] whitespace-nowrap transition-all"
             >
               <LuCalendar className="w-3.5 h-3.5" />
               <span>{data.nav.bookCall}</span>
@@ -201,7 +281,7 @@ function Index() {
             {/* Mobile Burger Trigger */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="xl:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white"
+              className="lg:hidden p-2 bg-[#121218] border border-white/15 text-zinc-200 hover:text-white"
               aria-label="Open menu"
             >
               <IoMdMenu className="w-6 h-6" />
@@ -211,10 +291,11 @@ function Index() {
       </header>
 
       {/* Main Content Container */}
-      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32 py-8 sm:py-12">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 sm:space-y-36 py-8 sm:py-12">
         <section id="overview" className="scroll-mt-24">
           <Cover
             data={data}
+            lang={lang}
             onOpenCv={() => setIsCvModalOpen(true)}
             onNavigate={scrollToSection}
           />
@@ -241,21 +322,16 @@ function Index() {
         </section>
       </main>
 
-      {/* Corporate Footer */}
-      <footer className="relative z-10 border-t border-slate-800/80 bg-slate-950/90 py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2.5">
-            <span className="w-6 h-6 rounded-md bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 font-extrabold text-[11px]">
-              JC
-            </span>
-            <span>{data.contact.footerNote}</span>
-          </div>
-          <div className="flex items-center gap-4">
+      {/* Luxury Minimalist Footer */}
+      <footer className="relative z-10 border-t border-white/10 bg-[#050507] py-10 mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+          <span className="tracking-wide">{data.contact.footerNote}</span>
+          <div className="flex items-center gap-5 uppercase tracking-widest text-[11px]">
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
-              className="text-cyan-400 hover:underline font-semibold cursor-pointer"
+              className="text-[#A78BFA] hover:text-white font-bold cursor-pointer transition-colors"
             >
-              {lang === "es" ? "Switch to English (EN)" : "Cambiar a Español (ES)"}
+              {lang === "es" ? "English Version (EN)" : "Versión Español (ES)"}
             </button>
             <span>•</span>
             <span>© {new Date().getFullYear()} Joseth Calderón</span>

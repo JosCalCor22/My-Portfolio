@@ -35,66 +35,61 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 w-full h-full flex items-center justify-center p-3 sm:p-6 lg:p-10 z-50 backdrop-blur-md bg-slate-950/80"
+      className="fixed inset-0 w-full h-full flex items-center justify-center p-3 sm:p-6 lg:p-10 z-50 backdrop-blur-md bg-black/85"
       onClick={() => setIsOpen(false)}
     >
       <motion.div
-        initial={{ scale: 0.94, opacity: 0, y: 20 }}
+        initial={{ scale: 0.96, opacity: 0, y: 16 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.94, opacity: 0, y: 20 }}
-        transition={{ type: "spring", damping: 26, stiffness: 300 }}
+        exit={{ scale: 0.96, opacity: 0, y: 16 }}
+        transition={{ duration: 0.25 }}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-5xl h-[90vh] bg-slate-900 rounded-2xl border border-slate-700/80 shadow-2xl flex flex-col overflow-hidden"
+        className="w-full max-w-5xl h-[90vh] bg-[#0B0B0F] border border-white/15 shadow-2xl flex flex-col overflow-hidden"
       >
         {/* Top Control Bar */}
-        <header className="flex flex-wrap justify-between items-center gap-3 px-5 py-4 border-b border-slate-800 bg-slate-950/80">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
-              JC
-            </div>
-            <div>
-              <h3 className="text-white font-bold text-sm sm:text-base">
-                {data.cvModal.title}
-              </h3>
-              <p className="text-slate-400 text-xs hidden sm:block">
-                {data.cvModal.subtitle}
-              </p>
-            </div>
+        <header className="flex flex-wrap justify-between items-center gap-3 px-6 py-4 border-b border-white/10 bg-[#070709]">
+          <div>
+            <h3 className="text-white font-bold text-sm uppercase tracking-wider">
+              {data.cvModal.title}
+            </h3>
+            <p className="text-zinc-500 text-xs hidden sm:block">
+              {data.cvModal.subtitle}
+            </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
             {/* Language Switcher inside CV */}
-            <div className="flex items-center bg-slate-900 border border-slate-700 rounded-lg p-0.5">
+            <div className="flex items-center bg-[#121218] border border-white/15 p-0.5">
               <button
                 onClick={() => setCvLang("es")}
-                className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3 py-1 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   cvLang === "es"
-                    ? "bg-cyan-500 text-slate-950 shadow-xs"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#6D28D9] text-white"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
-                ES • Español
+                ES
               </button>
               <button
                 onClick={() => setCvLang("en")}
-                className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3 py-1 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   cvLang === "en"
-                    ? "bg-cyan-500 text-slate-950 shadow-xs"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-[#6D28D9] text-white"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
-                EN • English
+                EN
               </button>
             </div>
 
             {/* View Mode Switcher */}
-            <div className="hidden md:flex items-center bg-slate-900 border border-slate-700 rounded-lg p-0.5">
+            <div className="hidden md:flex items-center bg-[#121218] border border-white/15 p-0.5">
               <button
                 onClick={() => setActiveTab("digital")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   activeTab === "digital"
-                    ? "bg-slate-800 text-cyan-400 border border-cyan-500/30"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-white text-black"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 <LuFileText className="w-3.5 h-3.5" />
@@ -102,10 +97,10 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
               </button>
               <button
                 onClick={() => setActiveTab("pdf")}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   activeTab === "pdf"
-                    ? "bg-slate-800 text-cyan-400 border border-cyan-500/30"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-white text-black"
+                    : "text-zinc-400 hover:text-white"
                 }`}
               >
                 <LuGlobe className="w-3.5 h-3.5" />
@@ -116,15 +111,15 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
             {activeTab === "digital" && (
               <button
                 onClick={handlePrint}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all cursor-pointer"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs uppercase tracking-wider font-bold bg-[#121218] hover:bg-[#6D28D9] text-white border border-white/15 hover:border-[#7C3AED] transition-all cursor-pointer"
               >
-                <LuPrinter className="w-3.5 h-3.5 text-cyan-400" />
+                <LuPrinter className="w-3.5 h-3.5 text-[#A78BFA]" />
                 {data.cvModal.printBtn}
               </button>
             )}
 
             <button
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
               onClick={() => setIsOpen(false)}
               aria-label="Close modal"
             >
@@ -134,47 +129,47 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
         </header>
 
         {/* Modal Body */}
-        <main className="w-full flex-1 relative overflow-y-auto bg-slate-950/50 p-4 sm:p-8">
+        <main className="w-full flex-1 relative overflow-y-auto bg-[#070709] p-4 sm:p-8">
           {activeTab === "digital" ? (
-            <div className="max-w-4xl mx-auto bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-xl space-y-8 text-slate-200">
+            <div className="max-w-4xl mx-auto bg-[#0B0B0F] border border-white/10 p-6 sm:p-10 space-y-8 text-zinc-200">
               {/* CV Header */}
-              <div className="border-b border-slate-800 pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                     Joseth Calderón Corredor
                   </h1>
-                  <p className="text-cyan-400 font-semibold text-base sm:text-lg mt-1">
+                  <p className="text-[#A78BFA] font-semibold text-sm sm:text-base uppercase tracking-wider mt-1">
                     {data.meta.role}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2 text-xs text-slate-300">
+                <div className="flex flex-wrap gap-2 text-xs text-zinc-300">
                   <a
                     href={externalLinks.email}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-800 border border-slate-700"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#121218] border border-white/10 hover:border-[#7C3AED]"
                   >
-                    <LuMail className="w-3.5 h-3.5 text-cyan-400" />
+                    <LuMail className="w-3.5 h-3.5 text-white" />
                     {data.meta.email}
                   </a>
                   <a
                     href={externalLinks.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-800 border border-slate-700"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#121218] border border-white/10 hover:border-[#7C3AED]"
                   >
-                    <LuPhone className="w-3.5 h-3.5 text-emerald-400" />
+                    <LuPhone className="w-3.5 h-3.5 text-white" />
                     {data.meta.phone}
                   </a>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700">
-                    <LuMapPin className="w-3.5 h-3.5 text-blue-400" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#121218] border border-white/10">
+                    <LuMapPin className="w-3.5 h-3.5 text-white" />
                     {data.meta.location}
                   </span>
                   <a
                     href={externalLinks.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:border-cyan-500/50 border border-slate-700"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#121218] border border-white/10 hover:border-[#7C3AED]"
                   >
-                    <FaLinkedin className="w-3.5 h-3.5 text-sky-400" />
+                    <FaLinkedin className="w-3.5 h-3.5 text-white" />
                     LinkedIn
                     <LuExternalLink className="w-3 h-3 opacity-60" />
                   </a>
@@ -182,7 +177,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                     href={externalLinks.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:border-cyan-500/50 border border-slate-700"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#121218] border border-white/10 hover:border-[#7C3AED]"
                   >
                     <FaGithub className="w-3.5 h-3.5 text-white" />
                     JosCalCor22
@@ -193,41 +188,41 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
 
               {/* Executive Summary */}
               <div>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed bg-slate-950/60 border border-slate-800/90 rounded-xl p-4">
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed border-l-2 border-[#7C3AED] pl-4">
                   {data.hero.summary}
                 </p>
               </div>
 
               {/* Work Experience */}
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-cyan-400 font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">
+                <div className="flex items-center gap-2 text-[#A78BFA] font-bold uppercase tracking-[0.2em] text-xs border-b border-white/10 pb-2">
                   <LuBriefcase className="w-4 h-4" />
                   <span>{data.experience.sectionTitle}</span>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {data.experience.items.map((job) => (
                     <div
                       key={job.id}
-                      className="bg-slate-950/40 border border-slate-800/80 rounded-xl p-5 space-y-3"
+                      className="bg-[#08080B] border border-white/[0.08] p-5 space-y-3"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                         <div>
                           <span className="text-white font-bold text-base">
                             {job.company}
                           </span>
-                          <span className="text-slate-500 mx-2">|</span>
-                          <span className="text-cyan-400 font-medium text-sm">
+                          <span className="text-zinc-600 mx-2">|</span>
+                          <span className="text-[#A78BFA] font-medium text-sm">
                             {job.role}
                           </span>
                         </div>
-                        <span className="text-xs font-mono text-slate-400 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800 w-fit">
+                        <span className="text-xs text-zinc-400 bg-[#121218] px-2.5 py-1 border border-white/10 w-fit">
                           {job.duration}
                         </span>
                       </div>
-                      <ul className="space-y-2 text-sm text-slate-300">
+                      <ul className="space-y-2 text-sm text-zinc-300">
                         {job.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-cyan-400 mt-1.5 text-xs">●</span>
+                          <li key={i} className="flex items-start gap-2.5">
+                            <span className="text-[#A78BFA] mt-1 text-xs">■</span>
                             <span>
                               <strong className="text-white">{h.title}:</strong>{" "}
                               {h.text}
@@ -247,13 +242,13 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
 
               {/* Honors & Awards */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-amber-400 font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">
+                <div className="flex items-center gap-2 text-[#A78BFA] font-bold uppercase tracking-[0.2em] text-xs border-b border-white/10 pb-2">
                   <LuAward className="w-4 h-4" />
                   <span>{data.awards.sectionTitle}</span>
                 </div>
-                <div className="bg-gradient-to-r from-amber-500/10 via-cyan-500/10 to-blue-500/10 border border-amber-500/30 rounded-xl p-4">
-                  <p className="text-sm text-slate-200">
-                    <strong className="text-amber-300">
+                <div className="bg-[#121218] border border-[#7C3AED]/40 p-4">
+                  <p className="text-sm text-zinc-200">
+                    <strong className="text-[#A78BFA]">
                       {data.awards.bannerTitle}:
                     </strong>{" "}
                     {data.awards.bannerSubtitle}
@@ -263,7 +258,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
 
               {/* Education */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-cyan-400 font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">
+                <div className="flex items-center gap-2 text-[#A78BFA] font-bold uppercase tracking-[0.2em] text-xs border-b border-white/10 pb-2">
                   <LuGraduationCap className="w-4 h-4" />
                   <span>{data.education.sectionTitle}</span>
                 </div>
@@ -271,20 +266,20 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                   {data.education.items.map((ed) => (
                     <div
                       key={ed.id}
-                      className="bg-slate-950/40 border border-slate-800/80 rounded-xl p-4 space-y-1.5"
+                      className="bg-[#08080B] border border-white/[0.08] p-4 space-y-1.5"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="text-white font-bold text-sm">
                           {ed.title}
                         </h4>
-                        <span className="text-[11px] font-mono text-cyan-400 shrink-0">
+                        <span className="text-[11px] text-[#A78BFA] shrink-0">
                           {ed.duration}
                         </span>
                       </div>
-                      <p className="text-xs font-semibold text-slate-400">
+                      <p className="text-xs font-semibold text-zinc-400">
                         {ed.institution}
                       </p>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="text-xs text-zinc-400 leading-relaxed">
                         {ed.description}
                       </p>
                     </div>
@@ -294,7 +289,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
 
               {/* Technical Skills */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-cyan-400 font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">
+                <div className="flex items-center gap-2 text-[#A78BFA] font-bold uppercase tracking-[0.2em] text-xs border-b border-white/10 pb-2">
                   <LuCpu className="w-4 h-4" />
                   <span>{data.skills.sectionTitle}</span>
                 </div>
@@ -310,15 +305,15 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
               </div>
             </div>
           ) : (
-            <div className="w-full h-full relative rounded-xl overflow-hidden bg-slate-900">
+            <div className="w-full h-full relative overflow-hidden bg-[#0B0B0F]">
               {isLoading && (
-                <div className="absolute inset-0 flex flex-col justify-center items-center bg-slate-950/90 backdrop-blur-xs z-20">
+                <div className="absolute inset-0 flex flex-col justify-center items-center bg-[#070709] z-20">
                   <Oval
                     visible={true}
-                    height="56"
-                    width="56"
-                    color="#06b6d4"
-                    secondaryColor="rgba(6,182,212,0.15)"
+                    height="50"
+                    width="50"
+                    color="#7C3AED"
+                    secondaryColor="rgba(124,58,237,0.2)"
                     ariaLabel="loading-canvas"
                   />
                 </div>
@@ -327,7 +322,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                 src={externalLinks.cvDrivePreview}
                 onLoad={() => setIsLoading(false)}
                 title="Joseth Calderon CV Preview"
-                className={`w-full h-full rounded-xl transition-all duration-500 ${
+                className={`w-full h-full transition-all duration-500 ${
                   isLoading ? "opacity-0" : "opacity-100"
                 }`}
               />

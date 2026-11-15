@@ -870,5 +870,14 @@ export const externalLinks = {
   linkedin: "https://www.linkedin.com/in/joseth-calderon/",
   github: "https://github.com/JosCalCor22",
   email: "mailto:josethcalderon266@gmail.com",
-  cvDrivePreview: "https://drive.google.com/file/d/122_u_LNXV7tG4D0-t6Xd0r_A5bpkLOrn/preview",
+  cvDrive: {
+    es: {
+      view: "https://drive.google.com/file/d/1VKZmhKFOpchFAvc8E4WGZ6a-Kk0FVQ7p/view?usp=sharing",
+      preview: "https://drive.google.com/file/d/1VKZmhKFOpchFAvc8E4WGZ6a-Kk0FVQ7p/preview",
+    },
+    en: {
+      view: "https://drive.google.com/file/d/1BJbXOqWVFhKAL7UwKPM4ct36LZF_T7x7/view?usp=sharing",
+      preview: "https://drive.google.com/file/d/1BJbXOqWVFhKAL7UwKPM4ct36LZF_T7x7/preview",
+    },
+  },
 };

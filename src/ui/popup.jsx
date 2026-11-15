@@ -24,6 +24,9 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const data = portfolioData[initialLang] || portfolioData.es;
+  const cvDriveUrl =
+    externalLinks.cvDrive[initialLang]?.preview ||
+    externalLinks.cvDrive.es.preview;
 
   const handlePrint = () => {
     window.print();
@@ -251,7 +254,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                 </div>
               )}
               <iframe
-                src={externalLinks.cvDrivePreview}
+                src={cvDriveUrl}
                 onLoad={() => setIsLoading(false)}
                 title="Joseth Calderon CV Preview"
                 className={`w-full h-full transition-all duration-500 ${

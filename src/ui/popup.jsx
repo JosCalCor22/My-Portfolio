@@ -21,10 +21,9 @@ import { TechBadge } from "./TechIcon";
 
 const Popup = ({ setIsOpen, initialLang = "es" }) => {
   const [activeTab, setActiveTab] = useState("digital");
-  const [cvLang, setCvLang] = useState(initialLang);
   const [isLoading, setIsLoading] = useState(true);
 
-  const data = portfolioData[cvLang] || portfolioData.es;
+  const data = portfolioData[initialLang] || portfolioData.es;
 
   const handlePrint = () => {
     window.print();
@@ -44,94 +43,27 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
         exit={{ scale: 0.96, opacity: 0, y: 16 }}
         transition={{ duration: 0.25 }}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-5xl h-[90vh] bg-[#0B0B0F] border border-white/15 shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-5xl h-[90vh] bg-[#0B0B10] border border-white/15 shadow-2xl flex flex-col overflow-hidden"
       >
-        {/* Top Control Bar */}
-        <header className="flex flex-wrap justify-between items-center gap-3 px-6 py-4 border-b border-white/10 bg-[#070709]">
-          <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider">
-              {data.cvModal.title}
-            </h3>
-            <p className="text-zinc-500 text-xs hidden sm:block">
-              {data.cvModal.subtitle}
-            </p>
-          </div>
+        {/* Minimalist Clean Header: Only "Visualizador de CV" + Close button */}
+        <header className="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-[#07070B]">
+          <h3 className="text-white font-black text-sm uppercase tracking-[0.2em]">
+            {data.cvModal.title}
+          </h3>
 
-          <div className="flex flex-wrap items-center gap-2.5">
-            {/* Language Switcher inside CV */}
-            <div className="flex items-center bg-[#121218] border border-white/15 p-0.5">
-              <button
-                onClick={() => setCvLang("es")}
-                className={`px-3 py-1 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  cvLang === "es"
-                    ? "bg-[#6D28D9] text-white"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => setCvLang("en")}
-                className={`px-3 py-1 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  cvLang === "en"
-                    ? "bg-[#6D28D9] text-white"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            {/* View Mode Switcher */}
-            <div className="hidden md:flex items-center bg-[#121218] border border-white/15 p-0.5">
-              <button
-                onClick={() => setActiveTab("digital")}
-                className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
-                  activeTab === "digital"
-                    ? "bg-white text-black"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                <LuFileText className="w-3.5 h-3.5" />
-                {data.cvModal.tabDigital}
-              </button>
-              <button
-                onClick={() => setActiveTab("pdf")}
-                className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
-                  activeTab === "pdf"
-                    ? "bg-white text-black"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                <LuGlobe className="w-3.5 h-3.5" />
-                {data.cvModal.tabPdf}
-              </button>
-            </div>
-
-            {activeTab === "digital" && (
-              <button
-                onClick={handlePrint}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs uppercase tracking-wider font-bold bg-[#121218] hover:bg-[#6D28D9] text-white border border-white/15 hover:border-[#7C3AED] transition-all cursor-pointer"
-              >
-                <LuPrinter className="w-3.5 h-3.5 text-[#A78BFA]" />
-                {data.cvModal.printBtn}
-              </button>
-            )}
-
-            <button
-              className="p-1.5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close modal"
-            >
-              <IoClose className="w-6 h-6" />
-            </button>
-          </div>
+          <button
+            className="p-1.5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close modal"
+          >
+            <IoClose className="w-6 h-6" />
+          </button>
         </header>
 
         {/* Modal Body */}
-        <main className="w-full flex-1 relative overflow-y-auto bg-[#070709] p-4 sm:p-8">
+        <main className="w-full flex-1 relative overflow-y-auto bg-[#07070B] p-4 sm:p-8 pb-24">
           {activeTab === "digital" ? (
-            <div className="max-w-4xl mx-auto bg-[#0B0B0F] border border-white/10 p-6 sm:p-10 space-y-8 text-zinc-200">
+            <div className="max-w-4xl mx-auto bg-[#0B0B10] border border-white/10 p-6 sm:p-10 space-y-8 text-zinc-200">
               {/* CV Header */}
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
@@ -203,7 +135,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                   {data.experience.items.map((job) => (
                     <div
                       key={job.id}
-                      className="bg-[#08080B] border border-white/[0.08] p-5 space-y-3"
+                      className="bg-[#08080D] border border-white/[0.08] p-5 space-y-3"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                         <div>
@@ -266,7 +198,7 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
                   {data.education.items.map((ed) => (
                     <div
                       key={ed.id}
-                      className="bg-[#08080B] border border-white/[0.08] p-4 space-y-1.5"
+                      className="bg-[#08080D] border border-white/[0.08] p-4 space-y-1.5"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="text-white font-bold text-sm">
@@ -305,9 +237,9 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
               </div>
             </div>
           ) : (
-            <div className="w-full h-full relative overflow-hidden bg-[#0B0B0F]">
+            <div className="w-full h-full relative overflow-hidden bg-[#0B0B10]">
               {isLoading && (
-                <div className="absolute inset-0 flex flex-col justify-center items-center bg-[#070709] z-20">
+                <div className="absolute inset-0 flex flex-col justify-center items-center bg-[#07070B] z-20">
                   <Oval
                     visible={true}
                     height="50"
@@ -329,6 +261,45 @@ const Popup = ({ setIsOpen, initialLang = "es" }) => {
             </div>
           )}
         </main>
+
+        {/* Floating Action Bubble for Print / Download & View Mode */}
+        <div className="absolute bottom-6 right-6 z-30 flex items-center gap-2 p-2 rounded-full bg-[#12101E]/95 backdrop-blur-xl border border-[#7C3AED]/50 shadow-[0_12px_40px_rgba(109,40,217,0.35)]">
+          <button
+            onClick={() =>
+              setActiveTab(activeTab === "digital" ? "pdf" : "digital")
+            }
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-200 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+            title={
+              activeTab === "digital"
+                ? data.cvModal.tabPdf
+                : data.cvModal.tabDigital
+            }
+          >
+            {activeTab === "digital" ? (
+              <>
+                <LuGlobe className="w-4 h-4 text-[#A78BFA]" />
+                <span className="hidden sm:inline">{data.cvModal.tabPdf}</span>
+              </>
+            ) : (
+              <>
+                <LuFileText className="w-4 h-4 text-[#A78BFA]" />
+                <span className="hidden sm:inline">
+                  {data.cvModal.tabDigital}
+                </span>
+              </>
+            )}
+          </button>
+
+          {activeTab === "digital" && (
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#6D28D9] hover:bg-[#7C3AED] text-white shadow-md transition-all cursor-pointer"
+            >
+              <LuPrinter className="w-4 h-4" />
+              <span>{data.cvModal.printBtn}</span>
+            </button>
+          )}
+        </div>
       </motion.div>
     </motion.div>
   );

@@ -36,46 +36,35 @@ const BurgerMenu = ({
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ duration: 0.28 }}
-          className="fixed inset-0 z-50 flex flex-col justify-between bg-[#070709] p-6"
+          className="fixed inset-0 z-50 flex flex-col justify-between bg-[#07050E]/95 backdrop-blur-xl p-6"
         >
-          {/* Top Bar (No white rectangle next to name) */}
+          {/* Top Bar (No Name/Role, Equal-Size Controls) */}
           <div className="flex items-center justify-between border-b border-white/10 pb-5">
-            <div>
-              <span className="block text-white font-black text-sm uppercase tracking-[0.22em]">
-                Joseth Calderón
-              </span>
-              <span className="block text-[10px] uppercase tracking-[0.18em] text-[#A78BFA]">
-                Product & Tech Leader
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="flex items-center bg-[#121218] border border-white/15 p-0.5">
-                <button
-                  onClick={() => setLang("es")}
-                  className={`px-2.5 py-1 text-xs font-bold transition-all cursor-pointer ${
-                    lang === "es" ? "bg-[#6D28D9] text-white" : "text-zinc-400"
-                  }`}
-                >
-                  ES
-                </button>
-                <button
-                  onClick={() => setLang("en")}
-                  className={`px-2.5 py-1 text-xs font-bold transition-all cursor-pointer ${
-                    lang === "en" ? "bg-[#6D28D9] text-white" : "text-zinc-400"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
-
+            <div className="h-11 flex items-center bg-[#121218] border border-white/20 p-1">
               <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 text-zinc-300 hover:text-white bg-[#121218] border border-white/15"
+                onClick={() => setLang("es")}
+                className={`h-full px-4 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${
+                  lang === "es" ? "bg-[#6D28D9] text-white" : "text-zinc-400"
+                }`}
               >
-                <IoMdClose className="w-6 h-6" />
+                ES
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`h-full px-4 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center ${
+                  lang === "en" ? "bg-[#6D28D9] text-white" : "text-zinc-400"
+                }`}
+              >
+                EN
               </button>
             </div>
+
+            <button
+              onClick={() => setIsOpen(false)}
+              className="h-11 w-11 flex items-center justify-center text-zinc-300 hover:text-white bg-[#121218] border border-white/20"
+            >
+              <IoMdClose className="w-6 h-6" />
+            </button>
           </div>
 
           {/* Center Navigation Links */}
@@ -99,7 +88,7 @@ const BurgerMenu = ({
           </nav>
 
           {/* Bottom Actions */}
-          <div className="flex flex-col gap-3 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
             <button
               onClick={() => {
                 setIsOpen(false);
@@ -108,13 +97,13 @@ const BurgerMenu = ({
               className="w-full py-4 bg-transparent border border-white/25 hover:border-[#7C3AED] text-white font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2"
             >
               <LuFileText className="w-4 h-4 text-[#A78BFA]" />
-              <span>{data.nav.viewCv} (ES / EN)</span>
+              <span>{data.nav.viewCv}</span>
             </button>
             <a
               href={externalLinks.calendar}
               target="_blank"
               rel="noreferrer"
-              className="w-full py-4 bg-[#6D28D9] text-white font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2"
+              className="w-full py-4 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 transition-colors"
             >
               <LuCalendar className="w-4 h-4" />
               <span>{data.nav.bookCall}</span>

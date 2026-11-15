@@ -105,7 +105,15 @@ function Index() {
   );
 
   return (
-    <div className="min-h-screen w-full bg-[#070709] text-zinc-100 relative selection:bg-[#7C3AED] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[#06050B] text-zinc-100 relative selection:bg-[#7C3AED] selection:text-white">
+      {/* Rich Ambient Background Gradient & Atmospheric Lighting */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(109,40,217,0.28),transparent_70%)]" />
+        <div className="absolute top-[28%] -left-40 w-[620px] h-[620px] bg-[#5B21B6]/18 rounded-full blur-[150px]" />
+        <div className="absolute top-[62%] -right-40 w-[580px] h-[580px] bg-[#3B0764]/25 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 left-1/3 w-[650px] h-[420px] bg-[#4C1D95]/16 rounded-full blur-[140px]" />
+      </div>
+
       {/* Mobile Navigation Drawer */}
       <BurgerMenu
         isOpen={isMobileMenuOpen}
@@ -118,22 +126,9 @@ function Index() {
         onOpenCv={() => setIsCvModalOpen(true)}
       />
 
-      {/* Sticky Header with Spacious Layout & Submenu */}
-      <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#070709]/90 border-b border-white/[0.08]">
+      {/* Sticky Glassmorphic Header (No Name/Role, Equal-Height Controls) */}
+      <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#07050E]/70 border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.45)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
-          {/* Brand Name (Removed white rectangle icon) */}
-          <button
-            onClick={() => scrollToSection("overview")}
-            className="text-left group cursor-pointer shrink-0"
-          >
-            <span className="block text-white font-black text-sm sm:text-base uppercase tracking-[0.22em] group-hover:text-[#A78BFA] transition-colors whitespace-nowrap">
-              Joseth Calderón
-            </span>
-            <span className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500 whitespace-nowrap">
-              Product & Tech Leader
-            </span>
-          </button>
-
           {/* Desktop Navigation with Submenu Dropdown */}
           <nav className="hidden lg:flex items-center gap-8">
             {primaryNavItems.map((item) => {
@@ -184,7 +179,7 @@ function Index() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute right-0 mt-3 w-64 bg-[#0B0B0F] border border-white/15 shadow-2xl divide-y divide-white/10 z-50"
+                    className="absolute left-0 mt-3 w-64 bg-[#0B0B12]/95 backdrop-blur-xl border border-white/15 shadow-2xl divide-y divide-white/10 z-50"
                   >
                     <div className="py-1">
                       {submenuItems.map((sub) => {
@@ -208,7 +203,7 @@ function Index() {
                       })}
                     </div>
 
-                    <div className="p-2 bg-[#08080B]">
+                    <div className="p-2 bg-[#08080D]">
                       <button
                         onClick={() => {
                           setIsSubmenuOpen(false);
@@ -218,7 +213,7 @@ function Index() {
                       >
                         <span className="inline-flex items-center gap-2">
                           <LuFileText className="w-3.5 h-3.5 text-[#A78BFA]" />
-                          {data.nav.viewCv} (ES / EN)
+                          {data.nav.viewCv}
                         </span>
                       </button>
                     </div>
@@ -228,17 +223,26 @@ function Index() {
             </div>
           </nav>
 
-          {/* Right Controls: Language Switcher (ES / EN) + CV + Book Call */}
-          <div className="flex items-center gap-3 shrink-0">
-            {/* Bilingual Language Toggle */}
+          {/* Mobile Burger Trigger on Left when Nav is hidden */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="lg:hidden h-11 px-3.5 bg-[#121218] border border-white/15 text-zinc-200 hover:text-white inline-flex items-center justify-center"
+            aria-label="Open menu"
+          >
+            <IoMdMenu className="w-6 h-6" />
+          </button>
+
+          {/* Right Controls: Equal-Size Language Switcher (ES / EN) + CV + Book Call */}
+          <div className="flex items-center gap-3 shrink-0 ml-auto">
+            {/* Bilingual Language Toggle — exact same height (h-11) as buttons */}
             <div
-              className="flex items-center bg-[#121218] border border-white/15 p-0.5"
+              className="h-11 flex items-center bg-[#121218] border border-white/20 p-1"
               role="group"
               aria-label="Language selector"
             >
               <button
                 onClick={() => setLang("es")}
-                className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                className={`h-full px-4 text-xs font-bold uppercase tracking-[0.16em] transition-all cursor-pointer flex items-center justify-center ${
                   lang === "es"
                     ? "bg-[#6D28D9] text-white"
                     : "text-zinc-400 hover:text-white"
@@ -248,7 +252,7 @@ function Index() {
               </button>
               <button
                 onClick={() => setLang("en")}
-                className={`px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                className={`h-full px-4 text-xs font-bold uppercase tracking-[0.16em] transition-all cursor-pointer flex items-center justify-center ${
                   lang === "en"
                     ? "bg-[#6D28D9] text-white"
                     : "text-zinc-400 hover:text-white"
@@ -258,34 +262,25 @@ function Index() {
               </button>
             </div>
 
-            {/* Interactive CV Button */}
+            {/* Interactive CV Button — exact same height (h-11) */}
             <button
               onClick={() => setIsCvModalOpen(true)}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-transparent hover:bg-white/5 text-white text-[11px] font-bold uppercase tracking-[0.16em] border border-white/20 hover:border-[#7C3AED] whitespace-nowrap transition-all cursor-pointer"
+              className="hidden sm:inline-flex h-11 items-center gap-2.5 px-5 bg-[#121218]/80 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-[0.16em] border border-white/20 hover:border-[#7C3AED] whitespace-nowrap transition-all cursor-pointer"
             >
-              <LuFileText className="w-3.5 h-3.5 text-[#A78BFA]" />
+              <LuFileText className="w-4 h-4 text-[#A78BFA]" />
               <span>{data.nav.viewCv}</span>
             </button>
 
-            {/* Primary Calendar CTA */}
+            {/* Primary Calendar CTA — exact same height (h-11) */}
             <a
               href={externalLinks.calendar}
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-[11px] uppercase tracking-[0.16em] whitespace-nowrap transition-all"
+              className="hidden md:inline-flex h-11 items-center gap-2.5 px-6 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-xs uppercase tracking-[0.16em] whitespace-nowrap transition-all"
             >
-              <LuCalendar className="w-3.5 h-3.5" />
+              <LuCalendar className="w-4 h-4" />
               <span>{data.nav.bookCall}</span>
             </a>
-
-            {/* Mobile Burger Trigger */}
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-2 bg-[#121218] border border-white/15 text-zinc-200 hover:text-white"
-              aria-label="Open menu"
-            >
-              <IoMdMenu className="w-6 h-6" />
-            </button>
           </div>
         </div>
       </header>
@@ -322,8 +317,8 @@ function Index() {
         </section>
       </main>
 
-      {/* Luxury Minimalist Footer */}
-      <footer className="relative z-10 border-t border-white/10 bg-[#050507] py-10 mt-20">
+      {/* Minimalist Footer */}
+      <footer className="relative z-10 border-t border-white/10 bg-[#05040A]/90 backdrop-blur-md py-10 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <span className="tracking-wide">{data.contact.footerNote}</span>
           <div className="flex items-center gap-5 uppercase tracking-widest text-[11px]">

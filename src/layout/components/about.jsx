@@ -24,7 +24,7 @@ const About = ({ data }) => {
 
   return (
     <div className="w-full space-y-10">
-      {/* Section Header (Title Only, no redundant description) */}
+      {/* Section Header */}
       <div className="flex items-start gap-6 border-b border-white/10 pb-6">
         <div className="hidden sm:flex flex-col items-center pt-1">
           <span className="text-4xl font-black tracking-tighter text-white leading-none">
@@ -43,7 +43,7 @@ const About = ({ data }) => {
       </div>
 
       {/* Symmetrical Full-Height Architectural Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 border border-white/10 bg-[#0B0B0F] items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 border border-white/10 bg-[#0B0B10]/90 backdrop-blur-xs items-stretch">
         {/* Left 4 Selector Rows — flex-1 ensures all 4 cards fill 100% of the height equally */}
         <div className="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col divide-y divide-white/10 h-full">
           {pillars.map((item, idx) => {
@@ -57,7 +57,7 @@ const About = ({ data }) => {
                 className={`flex-1 w-full text-left px-6 py-6 sm:px-7 transition-all duration-300 flex items-center justify-between gap-4 cursor-pointer ${
                   isSelected
                     ? "bg-[#6D28D9] text-white"
-                    : "bg-[#0B0B0F] hover:bg-[#121218] text-white"
+                    : "bg-transparent hover:bg-[#12121A] text-white"
                 }`}
               >
                 <div className="flex items-center gap-4">
@@ -98,7 +98,7 @@ const About = ({ data }) => {
         </div>
 
         {/* Right Detail Panel — matches exact height of Left Column */}
-        <div className="lg:col-span-7 flex bg-[#09090D] h-full">
+        <div className="lg:col-span-7 flex bg-[#08080D]/90 h-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activePillar.id}
@@ -134,7 +134,7 @@ const About = ({ data }) => {
                       key={index}
                       className="flex items-start gap-4 p-4 bg-[#101017] border border-white/[0.08] hover:border-[#7C3AED]/50 transition-colors"
                     >
-                      <span className="font-editorial italic text-lg text-[#A78BFA] leading-none mt-0.5">
+                      <span className="text-xs font-bold text-[#A78BFA] leading-none mt-1">
                         0{index + 1}
                       </span>
                       <p className="text-sm text-zinc-200 leading-relaxed">

@@ -47,47 +47,51 @@ const Contact = ({ data, onOpenCv }) => {
       </div>
 
       {/* Architectural Contact Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 border border-white/10 bg-[#0B0B0F]">
-        {/* Left Pitch & Primary Actions */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 border border-white/10 bg-[#0B0B10]/90 backdrop-blur-xs">
+        {/* Left Pitch & Equal-Sized Primary Actions */}
         <div className="lg:col-span-7 p-7 sm:p-12 flex flex-col justify-between space-y-8 border-b lg:border-b-0 lg:border-r border-white/10">
-          <div className="space-y-5">
-            <p className="font-editorial italic text-2xl sm:text-3xl text-[#A78BFA]">
+          <div className="space-y-4">
+            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Joseth Calderón Corredor
+            </h3>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#A78BFA] font-semibold">
+              {data.meta.role}
             </p>
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-xl pt-1">
               {data.contact.sectionSubtitle}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          {/* Equal-Width Action Buttons Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pt-2">
             <a
               href={externalLinks.calendar}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-xs uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-xs uppercase tracking-[0.16em] text-center transition-all duration-300 cursor-pointer"
             >
-              <LuCalendar className="w-4 h-4" />
+              <LuCalendar className="w-4 h-4 shrink-0" />
               <span>{data.contact.scheduleBtn}</span>
             </a>
 
             <button
               onClick={onOpenCv}
-              className="inline-flex items-center gap-3 px-7 py-4 bg-transparent hover:bg-white/5 text-white font-semibold text-xs uppercase tracking-[0.18em] border border-white/25 hover:border-[#7C3AED] transition-all duration-300 cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-transparent hover:bg-white/5 text-white font-semibold text-xs uppercase tracking-[0.16em] text-center border border-white/25 hover:border-[#7C3AED] transition-all duration-300 cursor-pointer"
             >
-              <LuFileText className="w-4 h-4 text-[#A78BFA]" />
+              <LuFileText className="w-4 h-4 text-[#A78BFA] shrink-0" />
               <span>{data.contact.cvBtn}</span>
             </button>
           </div>
         </div>
 
         {/* Right Direct Channels Divide List */}
-        <div className="lg:col-span-5 flex flex-col divide-y divide-white/10 bg-[#08080B]">
+        <div className="lg:col-span-5 flex flex-col divide-y divide-white/10 bg-[#08080D]">
           {/* WhatsApp */}
           <a
             href={externalLinks.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="group p-6 flex items-center justify-between hover:bg-[#111117] transition-colors"
+            className="group p-6 flex items-center justify-between hover:bg-[#111118] transition-colors"
           >
             <div className="flex items-center gap-4">
               <div className="p-3 bg-[#121218] border border-white/10 group-hover:border-[#25D366]/50 text-white group-hover:text-[#25D366] transition-colors">
@@ -110,7 +114,7 @@ const Contact = ({ data, onOpenCv }) => {
             href={externalLinks.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="group p-6 flex items-center justify-between hover:bg-[#111117] transition-colors"
+            className="group p-6 flex items-center justify-between hover:bg-[#111118] transition-colors"
           >
             <div className="flex items-center gap-4">
               <div className="p-3 bg-[#121218] border border-white/10 group-hover:border-[#0A66C2]/50 text-white group-hover:text-[#0A66C2] transition-colors">
@@ -133,7 +137,7 @@ const Contact = ({ data, onOpenCv }) => {
             href={externalLinks.github}
             target="_blank"
             rel="noreferrer"
-            className="group p-6 flex items-center justify-between hover:bg-[#111117] transition-colors"
+            className="group p-6 flex items-center justify-between hover:bg-[#111118] transition-colors"
           >
             <div className="flex items-center gap-4">
               <div className="p-3 bg-[#121218] border border-white/10 group-hover:border-[#A78BFA]/50 text-white group-hover:text-[#A78BFA] transition-colors">
@@ -152,7 +156,7 @@ const Contact = ({ data, onOpenCv }) => {
           </a>
 
           {/* Email with One-Click Copy */}
-          <div className="group p-6 flex items-center justify-between gap-2 hover:bg-[#111117] transition-colors">
+          <div className="group p-6 flex items-center justify-between gap-2 hover:bg-[#111118] transition-colors">
             <a
               href={externalLinks.email}
               className="flex items-center gap-4 min-w-0 flex-1"

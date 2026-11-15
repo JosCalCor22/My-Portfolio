@@ -15,10 +15,10 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative w-full bg-[#0B0B0F] border border-white/10 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)]"
+        className="relative w-full bg-[#0B0B10]/90 backdrop-blur-sm border border-white/10 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.85)]"
       >
         {/* Subtle Architectural Purple Glow & Wireframe */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#6D28D9]/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#6D28D9]/20 rounded-full blur-[120px] pointer-events-none" />
         <svg
           className="absolute right-10 top-10 w-[440px] h-[440px] text-white/[0.03] pointer-events-none hidden lg:block"
           viewBox="0 0 400 400"
@@ -91,10 +91,10 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
           <div className="lg:col-span-6 p-8 sm:p-12 xl:p-16 flex flex-col justify-center space-y-10">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <span className="font-editorial italic text-2xl sm:text-3xl text-[#A78BFA]">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#A78BFA]">
                   {data.hero.greeting}
                 </span>
-                <span className="h-[1px] w-12 bg-white/20" />
+                <span className="h-[1px] w-10 bg-white/20" />
                 <span className="text-xs uppercase tracking-[0.25em] text-zinc-400 font-medium">
                   {data.meta.location}
                 </span>
@@ -124,7 +124,7 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
               {data.hero.headline}
             </p>
 
-            {/* Mobile Social Icons (Only icons, no text hyperlinks) */}
+            {/* Mobile Social Icons (Only icons) */}
             <div className="flex lg:hidden items-center gap-4 text-zinc-300">
               <a
                 href={externalLinks.linkedin}
@@ -162,13 +162,13 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
               </a>
             </div>
 
-            {/* Action Buttons (Removed redundant CV EN/ES button) */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href={externalLinks.calendar}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-[#7C3AED] text-black hover:text-white font-bold text-xs uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-[#6D28D9] text-black hover:text-white font-bold text-xs uppercase tracking-[0.18em] transition-all duration-300 cursor-pointer"
               >
                 <LuCalendar className="w-4 h-4" />
                 <span>{data.hero.primaryCta}</span>
@@ -184,10 +184,9 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
             </div>
           </div>
 
-          {/* Right Portrait Studio Composition (Clean, without floating text label) */}
-          <div className="lg:col-span-5 relative flex items-end justify-center pt-10 px-6 lg:px-10 overflow-hidden bg-gradient-to-b from-transparent via-[#130D24]/35 to-[#08080A]">
-            {/* Architectural Dark Backdrop Arch */}
-            <div className="absolute bottom-0 w-[310px] sm:w-[360px] h-[360px] sm:h-[410px] rounded-t-full bg-[#12101B] border border-[#7C3AED]/20 pointer-events-none" />
+          {/* Right Portrait Studio Composition */}
+          <div className="lg:col-span-5 relative flex items-end justify-center pt-10 px-6 lg:px-10 overflow-hidden bg-gradient-to-b from-transparent via-[#180E2E]/40 to-[#08080A]">
+            <div className="absolute bottom-0 w-[310px] sm:w-[360px] h-[360px] sm:h-[410px] rounded-t-full bg-[#131020] border border-[#7C3AED]/25 pointer-events-none" />
 
             <img
               src="/images/Photo_Profile.png"
@@ -195,8 +194,7 @@ const Cover = ({ data, onNavigate, lang = "es" }) => {
               className="relative z-10 w-72 sm:w-80 xl:w-[360px] h-auto object-contain filter contrast-105 brightness-95 hover:brightness-100 transition-all duration-500"
             />
 
-            {/* Bottom Gradient Fade */}
-            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B0B0F] via-[#0B0B0F]/60 to-transparent z-20 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B0B10] via-[#0B0B10]/60 to-transparent z-20 pointer-events-none" />
           </div>
         </div>
       </motion.div>
